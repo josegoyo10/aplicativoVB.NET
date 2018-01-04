@@ -1,0 +1,8 @@
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug\ConsoleApp1.exe
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug\ConsoleApp1.pdb
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug\ConsoleApp1.xml
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\obj\x86\Debug\ConsoleApp1.Resources.resources
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\obj\x86\Debug\ConsoleApp1.vbproj.GenerateResource.Cache
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\obj\x86\Debug\ConsoleApp1.exe
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\obj\x86\Debug\ConsoleApp1.xml
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\obj\x86\Debug\ConsoleApp1.pdb

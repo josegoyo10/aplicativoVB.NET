@@ -1,0 +1,17 @@
+C:\Users\Admin\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.vbprojResolveAssemblyReference.cache
+C:\Users\Admin\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.Resources.resources
+C:\Users\Admin\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.vbproj.GenerateResource.Cache
+C:\Users\Admin\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\Admin\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\Admin\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.xml
+C:\Users\Admin\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\Admin\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.xml
+C:\Users\Admin\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.xml
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.Resources.resources
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.vbproj.GenerateResource.Cache
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.xml
+C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

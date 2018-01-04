@@ -1,0 +1,14 @@
+<content>
+	<base>
+		<proyectos><![CDATA[Informacion Global Proyectos_FINAL.xlsx]]></proyectos>
+		<!--carpeta tip="padre" estado="1"><![CDATA[\\wxp-jsilva97\Compartida_IF\Programa Empatia\Programa Empatia - ModeloIF\]]></carpeta!-->
+		<carpeta tip="padre" estado="1"><![CDATA[C:\Proyectos Modelo IF\]]></carpeta>
+		<carpeta tip="hijo" estado="0"><![CDATA[1.-Transferencia de Conocimiento]]></carpeta>
+		<carpeta tip="hijo" estado="1"><![CDATA[2.-Check List]]></carpeta>
+		<carpeta tip="hijo" estado="1"><![CDATA[3.-Planificación]]></carpeta>
+		<carpeta tip="hijo" estado="1"><![CDATA[4.-Reunión Periódica]]></carpeta>
+		<carpeta tip="hijo" estado="1"><![CDATA[5.-Administrador_Compromisos]]></carpeta>
+		<carpeta tip="hijo" estado="0"><![CDATA[6.-Ámbitos]]></carpeta>
+		<carpeta tip="hijo" estado="0"><![CDATA[7.-Documento Cierre]]></carpeta>
+	</base>
+</content>  

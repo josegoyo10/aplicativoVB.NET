@@ -1,0 +1,4 @@
+2018-01-03 10:13:39 : Iniciando archivo de log.
+2018-01-03 10:13:39 : Path de acceso al archivo de configuración en C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug.
+2018-01-03 10:13:39 : Archivo de configuracion: C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug\xml\config.xml.
+2018-01-03 10:13:40 : Error al cargar el archivo de configuración : Un comentario XML no puede contener '--', y '-' no puede ser el último carácter. Línea 16, posición 11..
