@@ -3875,7 +3875,7 @@ salirSinFilas:
                         If (cat2_value <> "") Then
                             cat2_aux = cadEnter_cat2(i)
                         Else
-                            cat2_aux = "-"
+                            cat2_aux = ""
 
                         End If
 
@@ -4100,7 +4100,7 @@ salir:
                     If (cod_int_value <> "") Then
                         cod_int_aux = cadEnter_cod_int(i)
                     Else
-                        cod_int_aux = "-"
+                        cod_int_aux = ""
                     End If
 
 
@@ -4777,7 +4777,7 @@ salir:
                             contfilas = contfilas + 1
 
                             If IsDBNull(adoRs.Item(4)) Then
-                                compromisos = "-"
+                                compromisos = ""
                             Else
                                 compromisos = Convert.ToString(adoRs.Item(4))
                             End If
