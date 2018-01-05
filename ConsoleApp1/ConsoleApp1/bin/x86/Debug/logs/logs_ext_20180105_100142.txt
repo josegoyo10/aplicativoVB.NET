@@ -1,0 +1,16 @@
+2018-01-05 10:01:42 : Iniciando archivo de log.
+2018-01-05 10:01:42 : Path de acceso al archivo de configuración en C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug.
+2018-01-05 10:01:42 : Archivo de configuracion: C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug\xml\config.xml.
+2018-01-05 10:01:42 : Cadena de conexion a base de datos encontrada.
+2018-01-05 10:01:42 : Carpeta base: \\wxp-jsilva97\Compartida_IF\Programa Empatia\Programa Empatia - ModeloIF\.
+2018-01-05 10:01:42 : Archivo de iniciativas: \\wxp-jsilva97\Compartida_IF\Programa Empatia\Programa Empatia - ModeloIF\Informacion Global Proyectos_FINAL.xlsx.
+2018-01-05 10:01:42 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-01-05 10:01:42 : Se Inserto con Exito en la tabla Iniciativa con el codigo: .
+2018-01-05 10:01:42 : Se inserto con exito en la tabla: imp_jp.
+2018-01-05 10:01:42 : Se inserto con exito en la tabla: imp_ldr.
+2018-01-05 10:01:42 : Se inserto con exito en la tabla: imp_esp_if.
+2018-01-05 10:01:42 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-01-05 10:01:42 : Se Inserto con Exito en la tabla IMP-INI-ESP-IF en la Función check_ini_esp_if .
+2018-01-05 10:01:42 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-01-05 10:01:43 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: ANF123.
+Error -- 2018-01-05 10:01:43 : Se ha producido un error en la Función checkValuespilotoFields ERROR [42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'pilH_ini_cod_ini'..

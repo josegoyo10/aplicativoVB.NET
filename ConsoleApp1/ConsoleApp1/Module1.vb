@@ -147,6 +147,7 @@ Module Module1
 
     Private Function checkCategoria(ByVal nom As String,
                                     ByVal rsp As String,
+                                    ByVal cod_Iniciativa As String,
                                     ByVal tblNom As String,
                                           Optional ByVal opt As Integer = 1) As String
 
@@ -182,8 +183,8 @@ Module Module1
 
                     Return dbresultados
                 Else
-                    If opt = 0 Then dbconsulta = "insert [dbo].[" & tblNom & "] (cat_nom,cat_des,cat_tri,cat_due) values('" & nom & "','','','" & rsp & "')"
-                    If opt = 1 Then dbconsulta = "insert [dbo].[" & tblNom & "] (cat2_nom,cat2_des,cat2_tri,cat2_rsp) values('" & nom & "','','','" & rsp & "')"
+                    If opt = 0 Then dbconsulta = "insert [dbo].[" & tblNom & "] (cat_cod_ini,cat_nom,cat_des,cat_tri,cat_due) values('" & cod_Iniciativa & "','" & nom & "','','','" & rsp & "')"
+                    If opt = 1 Then dbconsulta = "insert [dbo].[" & tblNom & "] (cat2_cod_ini,cat2_nom,cat2_des,cat2_tri,cat2_rsp) values('" & cod_Iniciativa & "','" & nom & "','','','" & rsp & "')"
 
                     dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
                     dbcommand = New Data.Odbc.OdbcCommand(dbconsulta, dbConexion)
@@ -360,6 +361,7 @@ salir:
 
     '******************************************************************************************************************************************************
     Private Function check_JP_LDR_IF(ByVal nom As String,
+                                     ByVal cod_iniciativa As String,
                                      ByVal nombre As String,
                                      ByVal apellido As String,
                                      ByVal tblNom As String,
@@ -392,10 +394,10 @@ salir:
                 dbControw = dbdata.Item(0).ToString
 
                 If (dbControw = 0) Then
-                    If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_nom,jp_pat,jp_mat,jp_als) values('" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
-                    If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
-                    If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_nom,if_pat,if_mat,if_als) values('" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
-                    If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_nom,if_pat,if_mat,if_als) values('" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+                    If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+                    If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+                    If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+                    If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
 
                     dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
                     dbcommand = New Data.Odbc.OdbcCommand(dbinsert, dbConexion)
@@ -471,10 +473,10 @@ salir:
 
                         If UBound(partes) = 2 Then
 
-                            If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_nom,jp_pat,jp_mat,jp_als) values('" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
-                            If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
-                            If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_nom,if_pat,if_mat,if_als) values('" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
-                            If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_nom,if_pat,if_mat,if_als) values('" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
+                            If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
+                            If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
+                            If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
+                            If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
 
                             Log("Se inserto con exito en la tabla: " & tblNom, "exito")
                         End If
@@ -482,19 +484,19 @@ salir:
 
 
                         If UBound(partes) = 1 Then
-                            If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_nom,jp_pat,jp_mat,jp_als) values('" & partes(0) & "','" & partes(1) & "','','')"
-                            If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & partes(0) & "','" & partes(1) & "','','')"
-                            If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_nom,if_pat,if_mat,if_als) values('" & partes(0) & "','" & partes(1) & "','','')"
-                            If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_nom,if_pat,if_mat,if_als) values('" & partes(0) & "','" & partes(1) & "','','')"
+                            If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
+                            If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
+                            If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
+                            If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
 
                             Log("Se inserto con exito en la tabla: " & tblNom, "exito")
                         End If
 
                         If UBound(partes) = 0 Then
-                            If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_nom,jp_pat,jp_mat,jp_als) values('" & partes(0) & "','','','')"
-                            If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & partes(0) & "','','','')"
-                            If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_nom,if_pat,if_mat,if_als) values('" & partes(0) & "','','','')"
-                            If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_nom,if_pat,if_mat,if_als) values('" & partes(0) & "','','','')"
+                            If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
+                            If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
+                            If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
+                            If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
 
                             Log("Se inserto con exito en la tabla: " & tblNom, "exito")
                         End If
@@ -947,9 +949,9 @@ salir:
          "begin " & _
          "declare @hoy datetime; " & _
          "set		@hoy=getdate(); " & _
-         "insert [dbo].[imp_ini_pil_hist]( pilH_ini_ide, pilH_fec_hist_inicio, pilH_fec_hist_fin, pilH_com, pilH_estado," & _
+         "insert [dbo].[imp_ini_pil_hist]( pilH_ini_ide,pilH_ini_cod_ini, pilH_fec_hist_inicio, pilH_fec_hist_fin, pilH_com, pilH_estado," & _
          "pilH_fec_act_pil) " & _
-         "select	pil_ini_ide, pil_fec_ini, pil_fec_ter, pil_com, pil_est, @hoy " & _
+         "select	pil_ini_ide, pil_ini_cod_ini,pil_fec_ini, pil_fec_ter, pil_com, pil_est, @hoy " & _
          "from imp_ini_pil " & _
          "where	pil_ini_ide='" & valor_id_iniciativa & "' " & _
          "ORDER BY pil_ini_ide " &
@@ -1048,8 +1050,8 @@ salir:
                 contador += 1
 
                 dbinsert_imp_ini_pil = "INSERT INTO [dbo].[" & tblNom & "] " _
-                        & "(pil_ini_ide,pil_fec_ini,pil_fec_ter,pil_com,pil_est) " _
-                        & "values('" & valor_id_iniciativa & "', '" & fecha_ini_aux & "','" & fecha_fin_aux & "', '" & coment_aux & "'," _
+                        & "(pil_ini_ide,pil_ini_cod_ini,pil_fec_ini,pil_fec_ter,pil_com,pil_est) " _
+                        & "values('" & valor_id_iniciativa & "', '" & cod_ini_val & "','" & fecha_ini_aux & "','" & fecha_fin_aux & "', '" & coment_aux & "'," _
                         & " '" & estado_aux & "') "
 
                 dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
@@ -1201,8 +1203,8 @@ salir:
                 contador += 1
 
                 dbinsert_imp_pil_hist = "INSERT INTO [dbo].[" & tblNom & "] " _
-                        & "(pilH_ini_ide,pilH_fec_hist_inicio,pilH_fec_hist_fin,pilH_com,pilH_estado,pilH_fec_act_pil) " _
-                        & "values('" & valor_id_iniciativa & "', '" & fecha_hist_ini_aux & "','" & fecha_hist_fin_aux & "', '" & coment_hist_aux & "'," _
+                        & "(pilH_ini_ide,pilH_ini_cod_ini,pilH_fec_hist_inicio,pilH_fec_hist_fin,pilH_com,pilH_estado,pilH_fec_act_pil) " _
+                        & "values('" & valor_id_iniciativa & "', '" & cod_proyecto_val & "','" & fecha_hist_ini_aux & "','" & fecha_hist_fin_aux & "', '" & coment_hist_aux & "'," _
                         & " '" & estado_hist_aux & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "') "
 
                 dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
@@ -1329,8 +1331,8 @@ salir:
                 contador += 1
 
                 dbinsert_despliegue = "INSERT INTO [dbo].[" & tblNom & "] " _
-                           & "(desp_ini_ide,desp_fec_ini,desp_fec_ter,desp_obs,desp_est,desp_fec_act) " _
-                           & "values('" & valor_id_iniciativa & "', '" & fecha_ini_aux & "','" & fecha_fin_aux & "', '" & coment_aux & "'," _
+                           & "(desp_ini_ide,desp_cod_ini,desp_fec_ini,desp_fec_ter,desp_obs,desp_est,desp_fec_act) " _
+                           & "values('" & valor_id_iniciativa & "','" & cod_ini_val & "', '" & fecha_ini_aux & "','" & fecha_fin_aux & "', '" & coment_aux & "'," _
                            & " '" & estado_aux & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "') "
 
 
@@ -1526,9 +1528,9 @@ salir:
                 'where desp_ini_ide = '" & valor_id_iniciativa & "'
 
                 insert_despliegue_historico = "INSERT INTO [dbo].[" & tblNom & "]" _
-                & "(despH_ini_ide,despH_fec_inicio,despH_fec_hist_fin," _
+                & "(despH_ini_ide,despH_cod_ini,despH_fec_inicio,despH_fec_hist_fin," _
                 & "despH_coment_hist,despH_estado_hist,despH_fec_act_hist)" _
-                & " SELECT desp_ini_ide,desp_fec_ini,desp_fec_ter, desp_obs,desp_est,convert(varchar, getdate(), 120)  " _
+                & " SELECT desp_ini_ide,desp_cod_ini,desp_fec_ini,desp_fec_ter, desp_obs,desp_est,convert(varchar, getdate(), 120)  " _
                 & " FROM [dbo].[imp_ini_desp] "
 
                 dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
@@ -1562,25 +1564,26 @@ salir:
 
     '**************************************************************************************************************************
 
-    Private Function checkValuesAmbitoFields(ByVal kick_off_val As String,
-                                  ByVal requerimiento_val As String,
-                                  ByVal proceso_compra_val As String,
-                                  ByVal infra_val As String,
-                                  ByVal habilitacion_val As String,
-                                  ByVal riesgo_ope_val As String,
-                                  ByVal seguridad_val As String,
-                                  ByVal comun_estud_val As String,
-                                  ByVal soport_ope_val As String,
-                                  ByVal gest_cambio_val As String,
-                                  ByVal monitoreo_val As String,
-                                  ByVal normt_proc_val As String,
-                                  ByVal coexistencia_val As String,
-                                  ByVal gest_reclamos_val As String,
-                                  ByVal sist_tecnlogia_val As String,
-                                  ByVal roles_val As String,
-                                  ByVal gestion_ind_val As String,
-                                  ByVal instal_faena_val As String,
-                                  ByVal tblNom As String) As String
+    Private Function checkValuesAmbitoFields(ByVal cod_ini_val As String,
+                                            ByVal kick_off_val As String,
+                                      ByVal requerimiento_val As String,
+                                      ByVal proceso_compra_val As String,
+                                      ByVal infra_val As String,
+                                      ByVal habilitacion_val As String,
+                                      ByVal riesgo_ope_val As String,
+                                      ByVal seguridad_val As String,
+                                      ByVal comun_estud_val As String,
+                                      ByVal soport_ope_val As String,
+                                      ByVal gest_cambio_val As String,
+                                      ByVal monitoreo_val As String,
+                                      ByVal normt_proc_val As String,
+                                      ByVal coexistencia_val As String,
+                                      ByVal gest_reclamos_val As String,
+                                      ByVal sist_tecnlogia_val As String,
+                                      ByVal roles_val As String,
+                                      ByVal gestion_ind_val As String,
+                                      ByVal instal_faena_val As String,
+                                      ByVal tblNom As String) As String
         Try
             Dim dbConexion As Data.Odbc.OdbcConnection
             Dim dbcommand As Data.Odbc.OdbcCommand
@@ -1588,9 +1591,9 @@ salir:
 
             If (kick_off_val <> "") Then
                 dbinsert_imp_ambito = "INSERT INTO [dbo].[" & tblNom & "] " _
-                         & "(amb_ini_ide,amb_kickoff,amb_requerimiento,amb_proc_compra,amb_infraest,amb_habilit,amb_riesg_ope,amb_seguridad,amb_comunic_est, " _
+                         & "(amb_ini_ide,amb_cod_ini,amb_kickoff,amb_requerimiento,amb_proc_compra,amb_infraest,amb_habilit,amb_riesg_ope,amb_seguridad,amb_comunic_est, " _
                          & " amb_sop_ope,amb_gst_camb,amb_monitoreo,amb_norm_proc_ctos,amb_coexistencia,amb_gest_recl,amb_sist_tec,amb_roles,amb_gst_indicadores,amb_instal_faena ) " _
-                          & "values('" & id_iniCod & "', '" & kick_off_val & "','" & requerimiento_val & "', " _
+                          & "values('" & id_iniCod & "', '" & cod_ini_val & "','" & kick_off_val & "','" & requerimiento_val & "', " _
                           & " '" & proceso_compra_val & "', '" & infra_val & "', '" & habilitacion_val & "','" & riesgo_ope_val & "', '" & seguridad_val & "' , " _
                           & " '" & comun_estud_val & "', '" & soport_ope_val & "', '" & gest_cambio_val & "','" & monitoreo_val & "', '" & normt_proc_val & "', " _
                           & " '" & coexistencia_val & "',  '" & gest_reclamos_val & "', '" & sist_tecnlogia_val & "', '" & roles_val & "','" & gestion_ind_val & "', " _
@@ -1953,71 +1956,11 @@ salir:
                 If (Convert.ToString(adoRs.Item(0)) <> "Incluir 'Empatía' y texto libre") Then
 
 
-                    '1era Columna del Archivo cabecera Color Naranja'
-                    Try
-                        idCategoria1 = checkCategoria(Convert.ToString(adoRs.Item(0)), "", "imp_categoria_1", 0)
-
-                    Catch ex As Exception
-                        Log("Error en la tabla Categoria 1....... " & ex.Message, "error")
-                        Console.WriteLine("Error en la tabla Categoria 1....... " & ex.Message)
-                        Console.ReadLine()
-                    End Try
-
-
-                    Try
-                        idCategoria2 = checkCategoria(Convert.ToString(adoRs.Item(1)), Convert.ToString(adoRs.Item(12)), "imp_categoria_2", 1)
-
-                    Catch ex As Exception
-                        Log("Error en la tabla  Categoria 2....... " & ex.Message, "error")
-                        Console.WriteLine("Error en la tabla Categoria 2....... " & ex.Message)
-                        Console.ReadLine()
-                    End Try
-
-                    Try
-
-                        idJefeProyecto = check_JP_LDR_IF(Convert.ToString(adoRs.Item(13)), "jp_nom", "jp_pat", "imp_jp", 0)
-                    Catch ex As Exception
-
-                        Log("Error en la tabla imp_jp." & ex.Message, "error")
-                        Console.WriteLine("Error en la tabla imp_jp....... " & ex.Message)
-                        Console.ReadLine()
-                    End Try
-
-
-                    Try
-
-                        idLider = check_JP_LDR_IF(Convert.ToString(adoRs.Item(14)), "ldr_nom", "ldr_pat", "imp_ldr", 1)
-                    Catch ex As Exception
-                        Log("Error en la tabla imp_ldr." & ex.Message, "error")
-                        Console.WriteLine("Error en la tabla imp_ldr....... " & ex.Message)
-                        Console.ReadLine()
-                    End Try
-
                     Try
                         idGantCubo = checkGantCubo(Convert.ToString(adoRs.Item(7)), Convert.ToString(adoRs.Item(3)).Trim, "imp_gc")
                     Catch ex As Exception
                         Log("Error en la tabla CheckGantCubo." & ex.Message, "error")
                         Console.WriteLine("Error en la tabla imp_ldr....... " & ex.Message)
-                        Console.ReadLine()
-                    End Try
-
-
-
-                    Try
-
-                        idIF = check_JP_LDR_IF(Convert.ToString(adoRs.Item(16)), "if_nom", "if_pat", "imp_esp_if", 2)
-                    Catch ex As Exception
-                        Log("Error en la tabla imp_esp_if." & ex.Message, "error")
-                        Console.WriteLine("Error en la tabla imp_esp_if." & ex.Message)
-                        Console.ReadLine()
-                    End Try
-
-
-                    Try
-                        idIFBackup = check_JP_LDR_IF(Convert.ToString(adoRs.Item(17)), "if_nom", "if_pat", "imp_esp_if", 3)
-                    Catch ex As Exception
-                        Log("Error en la tabla imp_esp_if 2." & ex.Message, "error")
-                        Console.WriteLine("Error en la tabla imp_esp_if ....... " & ex.Message)
                         Console.ReadLine()
                     End Try
 
@@ -2038,6 +1981,22 @@ salir:
                         If (cod_iniciativa <> "") Then
                             initData = getInit_Data("imp_iniciativa", idCategoria1, idCategoria2, idGantCubo, idJefeProyecto, idLider, idIF, idIFBackup, iniciativa, cod_iniciativa, estado, desc_ejecutiva, entregable_proyecto, canal_impactado_suc, canal_impactado_int, canal_impactado_aut, canal_impactado_otr, responsable_eje)
 
+                            'Categoria 1
+                            idCategoria1 = checkCategoria(Convert.ToString(adoRs.Item(0)), "", cod_iniciativa, "imp_categoria_1", 0)
+
+                            'Categoria 2
+                            idCategoria2 = checkCategoria(Convert.ToString(adoRs.Item(1)), Convert.ToString(adoRs.Item(12)), cod_iniciativa, "imp_categoria_2", 1)
+
+                            'jefe proyecto
+                            idJefeProyecto = check_JP_LDR_IF(Convert.ToString(adoRs.Item(13)), cod_iniciativa, "jp_nom", "jp_pat", "imp_jp", 0)
+
+                            idLider = check_JP_LDR_IF(Convert.ToString(adoRs.Item(14)), cod_iniciativa, "ldr_nom", "ldr_pat", "imp_ldr", 1)
+
+
+                            idIF = check_JP_LDR_IF(Convert.ToString(adoRs.Item(16)), cod_iniciativa, "if_nom", "if_pat", "imp_esp_if", 2)
+
+
+                            idIFBackup = check_JP_LDR_IF(Convert.ToString(adoRs.Item(17)), cod_iniciativa, "if_nom", "if_pat", "imp_esp_if", 3)
 
 
                             idGestores = check_Gestores_otro_Miembros(Convert.ToString(adoRs.Item(15)), cod_iniciativa, "imp_gst", 1)
@@ -2056,7 +2015,7 @@ salir:
                             id_despliegue = checkValuesdespliegueFields(Convert.ToString(adoRs.Item(3)), Convert.ToString(adoRs.Item(25)), Convert.ToString(adoRs.Item(26)), Convert.ToString(adoRs.Item(27)), Convert.ToString(adoRs.Item(28)), "imp_ini_desp")
 
                             ''6ta Columna del Archivo cabecera Color Rojo (KickOff .. Instalación de Faena)
-                            id_ambito = checkValuesAmbitoFields(Convert.ToString(adoRs.Item(29)), Convert.ToString(adoRs.Item(30)), Convert.ToString(adoRs.Item(31)), Convert.ToString(adoRs.Item(32)), Convert.ToString(adoRs.Item(33)), Convert.ToString(adoRs.Item(34)), Convert.ToString(adoRs.Item(35)), Convert.ToString(adoRs.Item(36)), Convert.ToString(adoRs.Item(37)), Convert.ToString(adoRs.Item(38)), Convert.ToString(adoRs.Item(39)), Convert.ToString(adoRs.Item(40)), Convert.ToString(adoRs.Item(41)), Convert.ToString(adoRs.Item(42)), Convert.ToString(adoRs.Item(43)), Convert.ToString(adoRs.Item(44)), Convert.ToString(adoRs.Item(45)), Convert.ToString(adoRs.Item(46)), "imp_ambito")
+                            id_ambito = checkValuesAmbitoFields(cod_iniciativa, Convert.ToString(adoRs.Item(29)), Convert.ToString(adoRs.Item(30)), Convert.ToString(adoRs.Item(31)), Convert.ToString(adoRs.Item(32)), Convert.ToString(adoRs.Item(33)), Convert.ToString(adoRs.Item(34)), Convert.ToString(adoRs.Item(35)), Convert.ToString(adoRs.Item(36)), Convert.ToString(adoRs.Item(37)), Convert.ToString(adoRs.Item(38)), Convert.ToString(adoRs.Item(39)), Convert.ToString(adoRs.Item(40)), Convert.ToString(adoRs.Item(41)), Convert.ToString(adoRs.Item(42)), Convert.ToString(adoRs.Item(43)), Convert.ToString(adoRs.Item(44)), Convert.ToString(adoRs.Item(45)), Convert.ToString(adoRs.Item(46)), "imp_ambito")
 
                             'TEMA RELEVANTE HISTORICO***************************************************'
                             id_tema_rel_historico = temaRelevanteHistValuesByVal(cod_iniciativa, "imp_temas_relevantes_hist")

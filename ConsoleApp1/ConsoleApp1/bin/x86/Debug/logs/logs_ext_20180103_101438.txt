@@ -1,3 +1,0 @@
-2018-01-03 10:14:38 : Iniciando archivo de log.
-2018-01-03 10:14:38 : Path de acceso al archivo de configuración en C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug.
-2018-01-03 10:14:55 : Archivo de configuracion: C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug\xml\config.xml.
