@@ -1957,14 +1957,6 @@ salir:
 
 
                     Try
-                        idGantCubo = checkGantCubo(Convert.ToString(adoRs.Item(7)), Convert.ToString(adoRs.Item(3)).Trim, "imp_gc")
-                    Catch ex As Exception
-                        Log("Error en la tabla CheckGantCubo." & ex.Message, "error")
-                        Console.WriteLine("Error en la tabla imp_ldr....... " & ex.Message)
-                        Console.ReadLine()
-                    End Try
-
-                    Try
                         iniciativa = Convert.ToString(adoRs.Item(2)).Trim
                         cod_iniciativa = Convert.ToString(adoRs.Item(3)).Trim
                         estado = Convert.ToString(adoRs.Item(4)).Trim
@@ -1987,6 +1979,9 @@ salir:
                             'Categoria 2
                             idCategoria2 = checkCategoria(Convert.ToString(adoRs.Item(1)), Convert.ToString(adoRs.Item(12)), cod_iniciativa, "imp_categoria_2", 1)
 
+                            'Gant Cubo
+                            idGantCubo = checkGantCubo(Convert.ToString(adoRs.Item(7)), Convert.ToString(adoRs.Item(3)).Trim, "imp_gc")
+
                             'jefe proyecto
                             idJefeProyecto = check_JP_LDR_IF(Convert.ToString(adoRs.Item(13)), cod_iniciativa, "jp_nom", "jp_pat", "imp_jp", 0)
 
@@ -2000,6 +1995,7 @@ salir:
 
 
                             idGestores = check_Gestores_otro_Miembros(Convert.ToString(adoRs.Item(15)), cod_iniciativa, "imp_gst", 1)
+
 
                             idEspif = check_ini_esp_if("imp_ini_esp_if")
 
