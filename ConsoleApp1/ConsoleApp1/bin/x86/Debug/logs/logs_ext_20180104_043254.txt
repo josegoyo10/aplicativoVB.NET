@@ -1,6 +1,0 @@
-2018-01-04 04:32:54 : Iniciando archivo de log.
-2018-01-04 04:32:54 : Path de acceso al archivo de configuración en C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug.
-2018-01-04 04:32:58 : Archivo de configuracion: C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug\xml\config.xml.
-2018-01-04 04:33:07 : Cadena de conexion a base de datos encontrada.
-2018-01-04 04:33:18 : Carpeta base: \\wxp-jsilva97\Compartida_IF\Programa Empatia\Programa Empatia - ModeloIF\.
-2018-01-04 04:33:25 : Archivo de iniciativas: \\wxp-jsilva97\Compartida_IF\Programa Empatia\Programa Empatia - ModeloIF\Informacion Global Proyectos_FINAL.xlsx.

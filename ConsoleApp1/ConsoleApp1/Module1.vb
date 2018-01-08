@@ -653,8 +653,8 @@ salir:
                         'Luego que recupero el ID del registro que fue insertado, se procede a insertar ese ID en la siguiente tabla
 
                         dbinsert_ini_gst = "INSERT INTO [dbo].[imp_ini_gst] " _
-                        & "(inigst_ini_ide,inigst_gst_ide,inigst_rol) " _
-                        & "values('" & id_iniCod & "', '" & dbresultado_ID & "','" & Rol & "' ) "
+                        & "(inigst_ini_ide,inigst_cod_ini,inigst_gst_ide,inigst_rol) " _
+                        & "values('" & id_iniCod & "', '" & codIniciativa & "','" & dbresultado_ID & "','" & Rol & "' ) "
 
                         'Debug.Print(dbinsert_ini_gst)
 
@@ -1254,8 +1254,8 @@ salir:
             Dim cadEnter_fecha_fin() As String
             Dim cadEnter_coment() As String
             Dim cadEnter_estado_piloto() As String
-
-
+            Dim dbResult As String = ""
+            Dim query_SQL As String = ""
             Dim dbinsert_despliegue As String = ""
             Dim fecha_ini_aux As String = ""
             Dim fecha_fin_aux As String = ""
@@ -1290,63 +1290,85 @@ salir:
 
             End If
 
-            For i As Integer = 0 To cadEnter_fecha_ini.Length - 1
+            query_SQL = "  Select count(desp_cod_ini) FROM [dbo].[imp_ini_desp] WHERE desp_cod_ini = '" & cod_ini_val & "'"
+            dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+            dbcommand = New Data.Odbc.OdbcCommand(query_SQL, dbConexion)
+            dbcommand.CommandType = CommandType.Text
+            dbConexion.Open()
+            dbdata = dbcommand.ExecuteReader
 
 
-                If (cadEnter_fecha_ini.Length > contador) Then
+            If dbdata.HasRows = True Then
+                dbdata.Read()
+                dbResult = dbdata.Item(0).ToString
 
-                    fecha_ini_aux = cadEnter_fecha_ini(i).Trim
-                Else
-                    fecha_ini_aux = ""
-
-                End If
-
-                If (cadEnter_fecha_fin.Length > contador) Then
-
-                    fecha_fin_aux = cadEnter_fecha_fin(i).Trim
-                Else
-                    fecha_fin_aux = ""
-
-                End If
-
-
-                If (cadEnter_coment.Length > contador) Then
-
-                    coment_aux = cadEnter_coment(i).Trim
-                Else
-                    coment_aux = ""
-
-                End If
-
-
-                If (cadEnter_estado_piloto.Length > contador) Then
-
-                    estado_aux = cadEnter_estado_piloto(i).Trim
-                Else
-                    estado_aux = ""
-
-                End If
-
-
-                contador += 1
-
-                dbinsert_despliegue = "INSERT INTO [dbo].[" & tblNom & "] " _
-                           & "(desp_ini_ide,desp_cod_ini,desp_fec_ini,desp_fec_ter,desp_obs,desp_est,desp_fec_act) " _
-                           & "values('" & valor_id_iniciativa & "','" & cod_ini_val & "', '" & fecha_ini_aux & "','" & fecha_fin_aux & "', '" & coment_aux & "'," _
-                           & " '" & estado_aux & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "') "
-
-
-                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                dbcommand = New Data.Odbc.OdbcCommand(dbinsert_despliegue, dbConexion)
-                dbcommand.CommandType = CommandType.Text
-                dbConexion.Open()
-                dbcommand.ExecuteNonQuery()
-                dbConexion.Close()
                 dbConexion = Nothing
                 dbcommand = Nothing
                 dbdata = Nothing
 
-            Next
+            End If
+
+            If (dbResult = "0") Then
+
+                For i As Integer = 0 To cadEnter_fecha_ini.Length - 1
+
+
+                    If (cadEnter_fecha_ini.Length > contador) Then
+
+                        fecha_ini_aux = cadEnter_fecha_ini(i).Trim
+                    Else
+                        fecha_ini_aux = ""
+
+                    End If
+
+                    If (cadEnter_fecha_fin.Length > contador) Then
+
+                        fecha_fin_aux = cadEnter_fecha_fin(i).Trim
+                    Else
+                        fecha_fin_aux = ""
+
+                    End If
+
+
+                    If (cadEnter_coment.Length > contador) Then
+
+                        coment_aux = cadEnter_coment(i).Trim
+                    Else
+                        coment_aux = ""
+
+                    End If
+
+
+                    If (cadEnter_estado_piloto.Length > contador) Then
+
+                        estado_aux = cadEnter_estado_piloto(i).Trim
+                    Else
+                        estado_aux = ""
+
+                    End If
+
+
+                    contador += 1
+
+                    dbinsert_despliegue = "INSERT INTO [dbo].[" & tblNom & "] " _
+                               & "(desp_ini_ide,desp_cod_ini,desp_fec_ini,desp_fec_ter,desp_obs,desp_est,desp_fec_act) " _
+                               & "values('" & valor_id_iniciativa & "','" & cod_ini_val & "', '" & fecha_ini_aux & "','" & fecha_fin_aux & "', '" & coment_aux & "'," _
+                               & " '" & estado_aux & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "') "
+
+
+                    dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                    dbcommand = New Data.Odbc.OdbcCommand(dbinsert_despliegue, dbConexion)
+                    dbcommand.CommandType = CommandType.Text
+                    dbConexion.Open()
+                    dbcommand.ExecuteNonQuery()
+                    dbConexion.Close()
+                    dbConexion = Nothing
+                    dbcommand = Nothing
+                    dbdata = Nothing
+
+                Next
+            End If
+
             Log("Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: " & cod_ini_val, "exito")
             Console.WriteLine("Se Inserto con Exito en la tabla Despliegue. ")
         Catch ex As Exception
