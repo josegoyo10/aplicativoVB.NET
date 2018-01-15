@@ -160,8 +160,13 @@ Module Module1
 
         If (nom <> "") Then
 
-            If opt = 0 Then dbconsulta = "select cat_ide from [dbo].[" & tblNom & "] where cat_nom='" & nom & "' and cat_due='" & rsp & "'"
-            If opt = 1 Then dbconsulta = "select cat2_ide from [dbo].[" & tblNom & "] where cat2_nom='" & nom & "' and cat2_rsp='" & rsp & "'"
+            'If opt = 0 Then dbconsulta = "select cat_ide from [dbo].[" & tblNom & "] where cat_nom='" & nom & "' and cat_due='" & rsp & "'"
+            'If opt = 1 Then dbconsulta = "select cat2_ide from [dbo].[" & tblNom & "] where cat2_nom='" & nom & "' and cat2_rsp='" & rsp & "'"
+
+            If opt = 0 Then dbconsulta = "select cat_ide from  [dbo].[" & tblNom & "] where cat_cod_ini='" & cod_Iniciativa & "' "
+            If opt = 1 Then dbconsulta = "select cat2_ide from [dbo].[" & tblNom & "] where cat2_cod_ini='" & cod_Iniciativa & "' "
+
+
 
             Try
                 dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
@@ -374,7 +379,7 @@ salir:
         Dim dbinsert As String = ""
         Dim dbresultados As String = ""
         Dim partes() As String
-        Dim cadNoasignada As String = "Sin Asignar"
+        Dim cadNoasignada As String = " "
         Dim dbRowCount As String = ""
         Dim index As Integer = 0
         Dim dbControw As Integer = 0
@@ -393,23 +398,23 @@ salir:
                 dbdata.Read()
                 dbControw = dbdata.Item(0).ToString
 
-                If (dbControw = 0) Then
-                    If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
-                    If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
-                    If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
-                    If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+                'If (dbControw = 0) Then
+                If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+                If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+                If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+                If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
 
-                    dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                    dbcommand = New Data.Odbc.OdbcCommand(dbinsert, dbConexion)
-                    dbcommand.CommandType = CommandType.Text
-                    dbConexion.Open()
-                    dbcommand.ExecuteNonQuery()
-                    dbConexion.Close()
-                    Return dbControw
-                    GoTo salir
-                Else
-                    GoTo salir
-                End If
+                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                dbcommand = New Data.Odbc.OdbcCommand(dbinsert, dbConexion)
+                dbcommand.CommandType = CommandType.Text
+                dbConexion.Open()
+                dbcommand.ExecuteNonQuery()
+                dbConexion.Close()
+                Return dbControw
+                GoTo salir
+                'Else
+                GoTo salir
+                'End If
             End If
 
         End If
@@ -445,6 +450,191 @@ salir:
             dbConexion.Open()
             dbdata = dbcommand.ExecuteReader
 
+            'If dbdata.HasRows = True Then
+            '    dbdata.Read()
+            '    dbresultados = dbdata.Item(0).ToString
+
+            '    dbdata.Close()
+            '    dbConexion.Close()
+
+            '    dbConexion = Nothing
+            '    dbcommand = Nothing
+            '    dbdata = Nothing
+
+            '    Return dbresultados
+            'Else
+
+            dbRowCount = "select COUNT(*) AS contador from [dbo].[" & tblNom & "]  WHERE " & nombre & " = '" & partes(0) & "' AND " & apellido & " = '" & partes(1) & "' "
+            dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+            dbcommand = New Data.Odbc.OdbcCommand(dbRowCount, dbConexion)
+            dbcommand.CommandType = CommandType.Text
+            dbConexion.Open()
+            dbdata = dbcommand.ExecuteReader
+
+            If dbdata.HasRows = True Then
+                dbdata.Read()
+                dbRowCount = dbdata.Item(0).ToString
+                'If (dbRowCount = 0) Then
+
+                If UBound(partes) = 2 Then
+
+                    If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
+                    If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
+                    If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
+                    If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
+
+                    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                End If
+
+
+
+                If UBound(partes) = 1 Then
+                    If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
+                    If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
+                    If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
+                    If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
+
+                    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                End If
+
+                If UBound(partes) = 0 Then
+                    If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
+                    If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
+                    If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
+                    If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
+
+                    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                End If
+
+                'Debug.Print(dbinsert)
+
+                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                dbcommand = New Data.Odbc.OdbcCommand(dbinsert, dbConexion)
+                dbcommand.CommandType = CommandType.Text
+                dbConexion.Open()
+                dbcommand.ExecuteNonQuery()
+
+                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                dbcommand = New Data.Odbc.OdbcCommand(dbconsulta, dbConexion)
+                dbcommand.CommandType = CommandType.Text
+                dbConexion.Open()
+                dbdata = dbcommand.ExecuteReader
+
+                If dbdata.HasRows = True Then
+                    dbdata.Read()
+                    dbresultados = dbdata.Item(0).ToString
+
+                    dbdata.Close()
+                    dbConexion.Close()
+
+                    dbConexion = Nothing
+                    dbcommand = Nothing
+                    dbdata = Nothing
+
+                    Return dbresultados
+                Else
+                    dbConexion = Nothing
+                    dbcommand = Nothing
+                    dbdata = Nothing
+
+                    Return "0"
+                End If
+
+            End If
+            'End If
+            ' End If
+        Catch ex As Exception
+            Log("Se ha producido un error en la Función check_JP_LDR_IF  " & ex.Message, "error")
+            Console.WriteLine("Se ha producido un error " & ex.Message)
+            Console.ReadLine()
+            Return "0"
+        End Try
+
+salir:
+        Return 0
+
+    End Function
+    '*******************************************************************************************************************************'
+    Private Function check_Esp_IF_Back(ByVal nom_esp As String,
+                                       ByVal nombre_esp_back As String,
+                                       ByVal cod_iniciativa As String,
+                                       ByVal tblNom As String,
+                                       Optional ByVal opt As Integer = 1) As String
+
+        Dim dbConexion As Data.Odbc.OdbcConnection
+        Dim dbcommand As Data.Odbc.OdbcCommand
+        Dim dbdata As Data.Odbc.OdbcDataReader
+        Dim dbconsulta As String = ""
+        Dim dbinsert As String = ""
+        Dim dbresultados As String = ""
+        Dim partes_esp() As String
+        Dim partes_esp_back() As String
+        Dim cadNoasignada As String = "Sin Asignar"
+        Dim dbRowCount As String = ""
+        Dim index As Integer = 0
+        Dim dbControw As Integer = 0
+
+        'If nom = "" Or InStr(1, nom, ".", CompareMethod.Text) = 0 Then GoTo salir
+
+
+        'dbRowCount = "select COUNT(" & nombre & ") AS contador from [dbo].[" & tblNom & "]  WHERE " & nombre & " = '" & cadNoasignada & "'  "
+        'dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+        'dbcommand = New Data.Odbc.OdbcCommand(dbRowCount, dbConexion)
+        'dbcommand.CommandType = CommandType.Text
+        'dbConexion.Open()
+        'dbdata = dbcommand.ExecuteReader
+
+        'If dbdata.HasRows = True Then
+        '    dbdata.Read()
+        '    dbControw = dbdata.Item(0).ToString
+
+        '    If (dbControw = 0) Then
+        '        If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+        '        If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+        '        If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+        '        If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & cadNoasignada & "','" & cadNoasignada & "','" & cadNoasignada & "','')"
+
+        '        dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+        '        dbcommand = New Data.Odbc.OdbcCommand(dbinsert, dbConexion)
+        '        dbcommand.CommandType = CommandType.Text
+        '        dbConexion.Open()
+        '        dbcommand.ExecuteNonQuery()
+        '        dbConexion.Close()
+        '        Return dbControw
+        '        GoTo salir
+        '    Else
+        '        GoTo salir
+        '    End If
+        'End If
+
+        'End If
+        partes_esp = Split(nom_esp, ".")
+        partes_esp_back = Split(nombre_esp_back, ".")
+
+        If partes_esp.Length = 1 And partes_esp_back.Length = 1 Then GoTo salir
+
+
+        If UBound(partes_esp) = 2 Or UBound(partes_esp_back) = 2 Then
+            dbconsulta = "select if_ide from [dbo].[" & tblNom & "] where if_cod_ini='" & cod_iniciativa & "'"
+        End If
+
+        If UBound(partes_esp) = 1 Or UBound(partes_esp_back) = 1 Then
+            dbconsulta = "select if_ide from [dbo].[" & tblNom & "] where if_cod_ini='" & cod_iniciativa & "'"
+        End If
+
+        If UBound(partes_esp) = 0 Or UBound(partes_esp_back) = 0 Then
+            dbconsulta = "select if_ide from [dbo].[" & tblNom & "] where if_cod_ini='" & cod_iniciativa & "'"
+        End If
+
+        'Debug.Print(dbconsulta)
+
+        Try
+            dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+            dbcommand = New Data.Odbc.OdbcCommand(dbconsulta, dbConexion)
+            dbcommand.CommandType = CommandType.Text
+            dbConexion.Open()
+            dbdata = dbcommand.ExecuteReader
+
             If dbdata.HasRows = True Then
                 dbdata.Read()
                 dbresultados = dbdata.Item(0).ToString
@@ -459,85 +649,150 @@ salir:
                 Return dbresultados
             Else
 
-                dbRowCount = "select COUNT(*) AS contador from [dbo].[" & tblNom & "]  WHERE " & nombre & " = '" & partes(0) & "' AND " & apellido & " = '" & partes(1) & "' "
+                'dbRowCount = "select COUNT(*) AS contador from [dbo].[" & tblNom & "]  WHERE " & nombre & " = '" & partes(0) & "' AND " & apellido & " = '" & partes(1) & "' "
+                'dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                'dbcommand = New Data.Odbc.OdbcCommand(dbRowCount, dbConexion)
+                'dbcommand.CommandType = CommandType.Text
+                'dbConexion.Open()
+                'dbdata = dbcommand.ExecuteReader
+
+                'If dbdata.HasRows = True Then
+                '    dbdata.Read()
+                '    dbRowCount = dbdata.Item(0).ToString
+                'If (dbRowCount = 0) Then
+
+
+
+
+                If UBound(partes_esp) = 2 And UBound(partes_esp_back) = 2 Then
+
+                    dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','" & partes_esp(2) & "','" & partes_esp_back(0) & "','" & partes_esp_back(1) & "','" & partes_esp_back(2) & "')"
+                    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                End If
+
+                If UBound(partes_esp) = 1 And UBound(partes_esp_back) = 1 Then
+
+                    dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','','" & partes_esp_back(0) & "','" & partes_esp_back(1) & "','')"
+                    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                End If
+
+
+                If UBound(partes_esp) = 2 And UBound(partes_esp_back) = 0 Then
+
+                    dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','" & partes_esp(2) & "','','','')"
+                    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                End If
+
+
+                If UBound(partes_esp) = 2 And UBound(partes_esp_back) = 1 Then
+
+                    dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','" & partes_esp(2) & "','" & partes_esp_back(0) & "','" & partes_esp_back(1) & "','')"
+                    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                End If
+
+
+
+                If UBound(partes_esp) = 1 And UBound(partes_esp_back) = 2 Then
+
+                    dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','','" & partes_esp_back(0) & "','" & partes_esp_back(1) & "','" & partes_esp_back(2) & "')"
+                    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                End If
+
+
+                If UBound(partes_esp) = 1 And UBound(partes_esp_back) = 0 Then
+
+                    dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','','','','')"
+                    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                End If
+
+
+
+                'Else
+                '    If (partes_esp_back.Length = 2) Then
+
+                '        dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','','" & partes_esp_back(0) & "','" & partes_esp_back(1) & "','')"
+
+                '        Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+
+                '    Else
+
+                '        dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','" & partes_esp(2) & "','" & partes_esp_back(0) & "','" & partes_esp_back(1) & "','" & partes_esp_back(2) & "')"
+
+                '    End If
+                'End If
+
+
+
+                'If UBound(partes_esp) = 2 Then
+
+                'If (partes_esp_back.Length = 1) Then
+
+                '    dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','" & partes_esp(2) & "','','','')"
+
+                '    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                'Else
+                '    If (partes_esp_back.Length = 2) Then
+
+                '        dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','','" & partes_esp_back(0) & "','" & partes_esp_back(1) & "','')"
+
+                '        Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+
+                '    Else
+
+                '        dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','" & partes_esp(2) & "','" & partes_esp_back(0) & "','" & partes_esp_back(1) & "','" & partes_esp_back(2) & "')"
+
+                '    End If
+                'End If
+
+
+                'If UBound(partes_esp) = 1 Then
+                '    dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','" & partes_esp(2) & "','" & partes_esp_back(0) & "','" & partes_esp_back(1) & "','" & partes_esp_back(2) & "')"
+                '    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                'End If
+
+                'If UBound(partes_esp) = 0 Then
+                '    dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom_esp_if,if_pat_esp_if,if_mat_esp_if,if_nom_esp_if_back,if_pat_esp_if_back,if_mat_esp_if_back) values('" & cod_iniciativa & "','" & partes_esp(0) & "','" & partes_esp(1) & "','" & partes_esp(2) & "','" & partes_esp_back(0) & "','" & partes_esp_back(1) & "','" & partes_esp_back(2) & "')"
+
+                '    Log("Se inserto con exito en la tabla: " & tblNom, "exito")
+                'End If
+
+                Debug.Print(dbinsert)
+
                 dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                dbcommand = New Data.Odbc.OdbcCommand(dbRowCount, dbConexion)
+                dbcommand = New Data.Odbc.OdbcCommand(dbinsert, dbConexion)
+                dbcommand.CommandType = CommandType.Text
+                dbConexion.Open()
+                dbcommand.ExecuteNonQuery()
+
+                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                dbcommand = New Data.Odbc.OdbcCommand(dbconsulta, dbConexion)
                 dbcommand.CommandType = CommandType.Text
                 dbConexion.Open()
                 dbdata = dbcommand.ExecuteReader
 
                 If dbdata.HasRows = True Then
                     dbdata.Read()
-                    dbRowCount = dbdata.Item(0).ToString
-                    If (dbRowCount = 0) Then
+                    dbresultados = dbdata.Item(0).ToString
 
-                        If UBound(partes) = 2 Then
+                    dbdata.Close()
+                    dbConexion.Close()
 
-                            If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
-                            If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
-                            If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
-                            If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','" & partes(2) & "','')"
+                    dbConexion = Nothing
+                    dbcommand = Nothing
+                    dbdata = Nothing
 
-                            Log("Se inserto con exito en la tabla: " & tblNom, "exito")
-                        End If
+                    Return dbresultados
+                Else
+                    dbConexion = Nothing
+                    dbcommand = Nothing
+                    dbdata = Nothing
 
-
-
-                        If UBound(partes) = 1 Then
-                            If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
-                            If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
-                            If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
-                            If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','" & partes(1) & "','','')"
-
-                            Log("Se inserto con exito en la tabla: " & tblNom, "exito")
-                        End If
-
-                        If UBound(partes) = 0 Then
-                            If opt = 0 Then dbinsert = "insert [dbo].[" & tblNom & "] (jp_cod_ini,jp_nom,jp_pat,jp_mat,jp_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
-                            If opt = 1 Then dbinsert = "insert [dbo].[" & tblNom & "] (ldr_cod_ini,ldr_nom,ldr_pat,ldr_mat,ldr_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
-                            If opt = 2 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
-                            If opt = 3 Then dbinsert = "insert [dbo].[" & tblNom & "] (if_cod_ini,if_nom,if_pat,if_mat,if_als) values('" & cod_iniciativa & "','" & partes(0) & "','','','')"
-
-                            Log("Se inserto con exito en la tabla: " & tblNom, "exito")
-                        End If
-
-                        'Debug.Print(dbinsert)
-
-                        dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                        dbcommand = New Data.Odbc.OdbcCommand(dbinsert, dbConexion)
-                        dbcommand.CommandType = CommandType.Text
-                        dbConexion.Open()
-                        dbcommand.ExecuteNonQuery()
-
-                        dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                        dbcommand = New Data.Odbc.OdbcCommand(dbconsulta, dbConexion)
-                        dbcommand.CommandType = CommandType.Text
-                        dbConexion.Open()
-                        dbdata = dbcommand.ExecuteReader
-
-                        If dbdata.HasRows = True Then
-                            dbdata.Read()
-                            dbresultados = dbdata.Item(0).ToString
-
-                            dbdata.Close()
-                            dbConexion.Close()
-
-                            dbConexion = Nothing
-                            dbcommand = Nothing
-                            dbdata = Nothing
-
-                            Return dbresultados
-                        Else
-                            dbConexion = Nothing
-                            dbcommand = Nothing
-                            dbdata = Nothing
-
-                            Return "0"
-                        End If
-
-                    End If
+                    Return "0"
                 End If
+
             End If
+            'End If
+                ' End If
         Catch ex As Exception
             Log("Se ha producido un error en la Función check_JP_LDR_IF  " & ex.Message, "error")
             Console.WriteLine("Se ha producido un error " & ex.Message)
@@ -549,6 +804,12 @@ salir:
         Return 0
 
     End Function
+
+
+
+
+
+
 
     '********************************************************************************************************************************************'
     Private Function check_Gestores_otro_Miembros(ByVal nom As String,
@@ -2010,10 +2271,12 @@ salir:
                             idLider = check_JP_LDR_IF(Convert.ToString(adoRs.Item(14)), cod_iniciativa, "ldr_nom", "ldr_pat", "imp_ldr", 1)
 
 
-                            idIF = check_JP_LDR_IF(Convert.ToString(adoRs.Item(16)), cod_iniciativa, "if_nom", "if_pat", "imp_esp_if", 2)
+                            'idIF = check_JP_LDR_IF(Convert.ToString(adoRs.Item(16)), cod_iniciativa, "if_nom", "if_pat", "imp_esp_if", 2)
 
 
-                            idIFBackup = check_JP_LDR_IF(Convert.ToString(adoRs.Item(17)), cod_iniciativa, "if_nom", "if_pat", "imp_esp_if", 3)
+                            'idIFBackup = check_JP_LDR_IF(Convert.ToString(adoRs.Item(17)), cod_iniciativa, "if_nom", "if_pat", "imp_esp_if", 3)
+
+                            idIF = check_Esp_IF_Back(Convert.ToString(adoRs.Item(16)), Convert.ToString(adoRs.Item(17)), cod_iniciativa, "imp_esp_if")
 
 
                             idGestores = check_Gestores_otro_Miembros(Convert.ToString(adoRs.Item(15)), cod_iniciativa, "imp_gst", 1)
@@ -2612,6 +2875,7 @@ salirSinFilas:
     Private Function ReunionPValuesByVal(ByVal id_iniciativa As String,
                                     ByVal cod_Iniciativa As String,
                                     ByVal nomb_archivo_value As String,
+                                    ByVal fecha_act_reunion As String,
                                     ByVal id_value As String,
                                     ByVal nivel_esq_value As String,
                                     ByVal nomb_tarea_value As String,
@@ -2643,7 +2907,7 @@ salirSinFilas:
             Dim cadEnter_comienzo() As String
             Dim cadEnter_fin() As String
             Dim cadEnter_predec() As String
-            Dim cadEnter_fecha_act() As String
+            'Dim cadEnter_fecha_act() As String
             Dim cadEnter_nomb_actual() As String
             Dim cadEnter_obj_actual() As String
 
@@ -2678,7 +2942,7 @@ salirSinFilas:
             cadEnter_comienzo = comienzo_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
             cadEnter_fin = fin_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
             cadEnter_predec = predec_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
-            cadEnter_fecha_act = fecha_act_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
+            'cadEnter_fecha_act = fecha_act_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
             cadEnter_nomb_actual = nomb_actualiz_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
             cadEnter_obj_actual = obj_actualiz_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
 
@@ -2719,9 +2983,9 @@ salirSinFilas:
                     predec_aux = cadEnter_predec(i)
                 End If
 
-                If (fecha_act_value <> "") Then
-                    fecha_act_aux = cadEnter_fecha_act(i)
-                End If
+                'If (fecha_act_value <> "") Then
+                '    fecha_act_aux = cadEnter_fecha_act(i)
+                'End If
 
                 If (nomb_actualiz_value <> "") Then
                     nombre_actualiz_aux = cadEnter_nomb_actual(i)
@@ -2736,7 +3000,7 @@ salirSinFilas:
              & "(planif_ini_ide,planif_cod_inic,planif_id,planif_nivel_esq, " _
              & "planif_nomb_tarea,planif_obs,planif_porct_comp,planif_duracion,planif_comienzo,planif_fin,planif_predecesor,planif_fecha_act,planif_nombre_act,planif_obj_act,planif_file_fec,planif_file_arc) " _
              & "values('" & id_iniciativa & "', '" & cod_Iniciativa & "','" & id_aux & "','" & nivel_esq_aux & "',  " _
-             & " '" & nomb_tarea_aux & "','" & obs_aux & "','" & porc_comp_aux & "','" & duracion_aux & "','" & comienzo_aux & "','" & fin_aux & "','" & predec_aux & "','" & fecha_act_aux & "', " _
+             & " '" & nomb_tarea_aux & "','" & obs_aux & "','" & porc_comp_aux & "','" & duracion_aux & "','" & comienzo_aux & "','" & fin_aux & "','" & predec_aux & "','" & fecha_act_reunion & "', " _
              & " '" & nombre_actualiz_aux & "','" & obj_actualiz_aux & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "','" & nomb_archivo_value & "')"
 
 
@@ -3153,7 +3417,7 @@ salirSinFilas:
 
     '*************************************************************REUNIÓN PERIODICA***************************************
 
-    Public Sub ModeloReunionPeriodica(idIniciativa, codIniciativa, nombArchivo)
+    Public Sub ModeloReunionPeriodica(idIniciativa, codIniciativa, nombArchivo, fecha_actualizacion_reunion)
 
         Dim adoCon As New Data.OleDb.OleDbConnection
         Dim adoRs As Data.OleDb.OleDbDataReader
@@ -3238,7 +3502,7 @@ salirSinFilas:
                 Do While adoRs.Read()
 
                     contfilas = contfilas + 1
-                    idReunionP = ReunionPValuesByVal(idIniciativa, codIniciativa, nombArchivo, Convert.ToString(adoRs.Item(0)).Trim, Convert.ToString(adoRs.Item(1)).Trim, CleanInput(Convert.ToString(adoRs.Item(2))).Trim, Convert.ToString(adoRs.Item(3)).Trim, Convert.ToString(adoRs.Item(4)).Trim, Convert.ToString(adoRs.Item(5)).Trim, Convert.ToString(adoRs.Item(6)).Trim, Convert.ToString(adoRs.Item(7)).Trim, Convert.ToString(adoRs.Item(8)).Trim, Convert.ToString(adoRs.Item(9)).Trim, Convert.ToString(adoRs.Item(10)).Trim, Convert.ToString(adoRs.Item(11)).Trim, contfilas, "imp_planificacion_reunion_periodica")
+                    idReunionP = ReunionPValuesByVal(idIniciativa, codIniciativa, nombArchivo, fecha_actualizacion_reunion, Convert.ToString(adoRs.Item(0)).Trim, Convert.ToString(adoRs.Item(1)).Trim, CleanInput(Convert.ToString(adoRs.Item(2))).Trim, Convert.ToString(adoRs.Item(3)).Trim, Convert.ToString(adoRs.Item(4)).Trim, Convert.ToString(adoRs.Item(5)).Trim, Convert.ToString(adoRs.Item(6)).Trim, Convert.ToString(adoRs.Item(7)).Trim, Convert.ToString(adoRs.Item(8)).Trim, Convert.ToString(adoRs.Item(9)).Trim, Convert.ToString(adoRs.Item(10)).Trim, Convert.ToString(adoRs.Item(11)).Trim, contfilas, "imp_planificacion_reunion_periodica")
                 Loop
             Else
                 GoTo salirSinFilas
@@ -5565,6 +5829,7 @@ salir:
         Dim partesArchivos() As String
         Dim archivoFinal As String
         Dim numMaxArchivo As String
+        Dim fecha_act_reunion_period As String
 
         carpetasLcl = System.IO.Directory.GetDirectories(Carpeta)
         archivosLcl = System.IO.Directory.GetFiles(Carpeta)
@@ -5599,12 +5864,24 @@ salir:
                                     archivoExcelRP = "" & numMaxArchivo & ""
                                     archivoExcelRP = Chr(34) & archivoExcelRP & Chr(34)
 
+                                    Dim partes_reunion_periodica() As String
+                                    Dim fecha_reunion As String
+                                    Dim fecha_ult_reunion_periodica As String
+
+
+                                    partes_reunion_periodica = Split(archivoExcelRP, "\")
+
+                                    fecha_act_reunion_period = Trim(partes_reunion_periodica(UBound(partes_reunion_periodica)))
+                                    fecha_reunion = fecha_act_reunion_period.Substring(fecha_act_reunion_period.LastIndexOf("_") + 1)
+                                    fecha_ult_reunion_periodica = fecha_reunion.Substring(0, fecha_reunion.IndexOf(".")).Trim()
+
+
                                     Try
                                         Log("4. Archivo procesado: " & archivoExcelRP, "exito")
                                         Console.WriteLine("4. Procesando archivo : " & archivoExcelRP)
 
                                         'Reunion Periodica'
-                                        Call ModeloReunionPeriodica(ideIniciativa, CodIniciativa, archivoExcelRP)
+                                        Call ModeloReunionPeriodica(ideIniciativa, CodIniciativa, archivoExcelRP, fecha_ult_reunion_periodica)
 
                                         Console.WriteLine("4. Archivo procesado: " & archivoExcelRP)
 
