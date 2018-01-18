@@ -3043,6 +3043,7 @@ salirSinFilas:
             Dim obj_actualiz_aux As String = ""
             Dim dbCodIni As String = ""
             Dim MessageExito As String = ""
+            Dim fecha_carga As String = ""
 
 
             'cadEnter_cod_ini = cod_inic_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
@@ -3059,7 +3060,7 @@ salirSinFilas:
             'cadEnter_fecha_act = fecha_act_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
             cadEnter_nomb_actual = nomb_actualiz_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
             cadEnter_obj_actual = obj_actualiz_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
-
+            fecha_carga = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
 
             'dbCodIni = "select  count(planif_ini_ide) as valor FROM [dbo].[imp_planificacion_reunion_periodica] where planif_file_arc='" & nomb_archivo_value & "'"
             'Debug.Print(dbCodIni)
@@ -3115,7 +3116,7 @@ salirSinFilas:
              & "planif_nomb_tarea,planif_obs,planif_porct_comp,planif_duracion,planif_comienzo,planif_fin,planif_predecesor,planif_fecha_act,planif_nombre_act,planif_obj_act,planif_file_fec,planif_file_arc) " _
              & "values('" & id_iniciativa & "', '" & cod_Iniciativa & "','" & id_aux & "','" & nivel_esq_aux & "',  " _
              & " '" & nomb_tarea_aux & "','" & obs_aux & "','" & porc_comp_aux & "','" & duracion_aux & "','" & comienzo_aux & "','" & fin_aux & "','" & predec_aux & "','" & fecha_act_reunion & "', " _
-             & " '" & nombre_actualiz_aux & "','" & obj_actualiz_aux & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "','" & nomb_archivo_value & "')"
+             & " '" & nombre_actualiz_aux & "','" & obj_actualiz_aux & "','" & fecha_carga & "','" & nomb_archivo_value & "')"
 
 
                 'Debug.Print(dbinsert_ini_planif)
