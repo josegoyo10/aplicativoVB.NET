@@ -1059,7 +1059,7 @@ salir:
 
 
             dbsql = "select count(*)  FROM [dbo].[imp_ini_pap]" _
-& "where pap_cod_ini = '" & cod_iniciativa & "' AND pap_fec_pap = '" & fecha_paso_prod & "'  AND pap_com_pap = '" & coment_paso_prod & "'"
+            & "where pap_cod_ini = '" & cod_iniciativa & "'"
 
             'Debug.Print(dbsql)
 
@@ -1105,46 +1105,46 @@ salir:
                     GoTo salir
 
                 End If
+
+
+
+                For i As Integer = 0 To cadEnter_paso_prod.Length - 1
+
+                    fecha_paso_prod = cadEnter_paso_prod(i)
+
+                    If coment_pap_val <> "" Then
+                        coment_paso_prod = cadEnter_coment_pap(i)
+                    Else
+                        coment_paso_prod = ""
+                    End If
+
+                    If estado_pap_val <> "" Then
+                        estado_paso_prod = cadEnter_estado_pap(i)
+                    Else
+                        estado_paso_prod = ""
+                    End If
+
+
+                    If (dbresult = "0") Then
+
+                        dbinsert_imp_ini_pap = "INSERT INTO [dbo].[imp_ini_pap] " _
+                      & "(pap_ini_ide, pap_cod_ini,pap_fec_pap,pap_com_pap,pap_estado_pap) " _
+                      & "values('" & id_iniCod & "', '" & cod_iniciativa & "','" & fecha_paso_prod & "','" & coment_paso_prod & "','" & estado_paso_prod & "'  ) "
+
+                        dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                        dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_ini_pap, dbConexion)
+                        dbcommand.CommandType = CommandType.Text
+                        dbConexion.Open()
+                        dbcommand.ExecuteNonQuery()
+
+                        dbConexion.Close()
+
+                        dbConexion = Nothing
+                        dbcommand = Nothing
+                        dbdata = Nothing
+                    End If
+                Next
             End If
-
-
-            For i As Integer = 0 To cadEnter_paso_prod.Length - 1
-
-                fecha_paso_prod = cadEnter_paso_prod(i)
-
-                If coment_pap_val <> "" Then
-                    coment_paso_prod = cadEnter_coment_pap(i)
-                Else
-                    coment_paso_prod = ""
-                End If
-
-                If estado_pap_val <> "" Then
-                    estado_paso_prod = cadEnter_estado_pap(i)
-                Else
-                    estado_paso_prod = ""
-                End If
-
-
-                If (dbresult = "0") Then
-
-                    dbinsert_imp_ini_pap = "INSERT INTO [dbo].[imp_ini_pap] " _
-                  & "(pap_ini_ide, pap_cod_ini,pap_fec_pap,pap_com_pap,pap_estado_pap) " _
-                  & "values('" & id_iniCod & "', '" & cod_iniciativa & "','" & fecha_paso_prod & "','" & coment_paso_prod & "','" & estado_paso_prod & "'  ) "
-
-                    dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                    dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_ini_pap, dbConexion)
-                    dbcommand.CommandType = CommandType.Text
-                    dbConexion.Open()
-                    dbcommand.ExecuteNonQuery()
-
-                    dbConexion.Close()
-
-                    dbConexion = Nothing
-                    dbcommand = Nothing
-                    dbdata = Nothing
-                End If
-            Next
-
 
             Log("Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment", "exito")
             Console.WriteLine("Se Inserto con Exito en la tabla IMP INI PAP.")

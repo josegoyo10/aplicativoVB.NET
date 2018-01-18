@@ -1,9 +1,9 @@
 ﻿<content>
 	<base>
-	    <conexion><![CDATA[Driver={SQL Server};Server=167.28.65.134;Database=IMPLANTACION;Uid=usrSAF;Pwd=pwdSAF;]]></conexion>
+	    <conexion><![CDATA[Driver={SQL Server};Server=167.28.65.134;Database=IMPLANTACION_DESA;Uid=usrSAF;Pwd=pwdSAF;]]></conexion>
 		<proyectos><![CDATA[Informacion Global Proyectos_FINAL.xlsx]]></proyectos>
-		<carpeta tip="padre" estado="1"><![CDATA[\\wxp-jsilva97\Compartida_IF\Programa Empatia\Programa Empatia - ModeloIF\]]></carpeta>
-		<!--carpeta tip="padre" estado="1"><![CDATA[C:\Proyectos Modelo IF\]]></carpeta!-->
+		<!--carpeta tip="padre" estado="1"><![CDATA[\\wxp-jsilva97\Compartida_IF\Programa Empatia\Programa Empatia - ModeloIF\]]></carpeta!-->
+		<carpeta tip="padre" estado="1"><![CDATA[C:\Proyectos Modelo IF\]]></carpeta>
 		<carpeta tip="hijo" estado="0"><![CDATA[1.-Transferencia de Conocimiento]]></carpeta>
 		<carpeta tip="hijo" estado="1"><![CDATA[2.-Check List]]></carpeta>
 		<carpeta tip="hijo" estado="1"><![CDATA[3.-Planificación]]></carpeta>
@@ -16,7 +16,7 @@
 			<nom><![CDATA[PBS - Potenciamiento Modelo BancaSeguros]]></nom>
 			<nom><![CDATA[OWP - Plataforma Inversiones]]></nom>
 			<nom><![CDATA[TSR - Tesoreria]]></nom>
-		</carpetas>
+		</carpetas> 
 	</base>
 </content>
- 
+   

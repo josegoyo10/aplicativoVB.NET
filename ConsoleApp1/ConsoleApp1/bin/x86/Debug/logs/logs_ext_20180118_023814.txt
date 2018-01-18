@@ -1,0 +1,11 @@
+2018-01-18 02:38:14 : Iniciando archivo de log.
+2018-01-18 02:38:14 : Path de acceso al archivo de configuración en C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug.
+2018-01-18 02:38:14 : Archivo de configuracion: C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug\xml\config.xml.
+2018-01-18 02:38:14 : Cadena de conexion a base de datos encontrada.
+2018-01-18 02:38:14 : Carpeta base: C:\Proyectos Modelo IF\.
+2018-01-18 02:38:14 : Archivo de iniciativas: C:\Proyectos Modelo IF\Informacion Global Proyectos_FINAL.xlsx.
+2018-01-18 02:38:14 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-01-18 02:38:14 : Se inserto con exito en la tabla: imp_jp.
+2018-01-18 02:38:14 : Se inserto con exito en la tabla: imp_ldr.
+2018-01-18 02:38:14 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-01-18 02:38:15 : Se Inserto con Exito en la tabla IMP-INI-ESP-IF en la Función check_ini_esp_if .
