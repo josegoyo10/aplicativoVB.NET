@@ -1076,8 +1076,58 @@ salir:
             cadEnter_estado_pap = estado_pap_val.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
 
 
+            dbsql = "select count(*)  FROM [dbo].[imp_ini_pap]" _
+& "where pap_cod_ini = '" & cod_iniciativa & "' AND pap_fec_pap = '" & fecha_paso_prod & "'  AND pap_com_pap = '" & coment_paso_prod & "'"
+
+            'Debug.Print(dbsql)
+
+            dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+            dbcommand = New Data.Odbc.OdbcCommand(dbsql, dbConexion)
+            dbcommand.CommandType = CommandType.Text
+            dbConexion.Open()
+            dbdata = dbcommand.ExecuteReader
+
+            If dbdata.HasRows = True Then
+                dbdata.Read()
+                dbresult = dbdata.Item(0).ToString
+
+                dbdata.Close()
+                dbConexion.Close()
+
+                dbConexion = Nothing
+                dbcommand = Nothing
+                dbdata = Nothing
+            End If
+
+            If (dbresult = "0") Then
+
+                If (cadEnter_paso_prod.Length = 0) And (cadEnter_coment_pap.Length = 0) And (cadEnter_estado_pap.Length = 0) Then
+
+                    dbinsert_imp_ini_pap = "INSERT INTO [dbo].[imp_ini_pap] " _
+                  & "(pap_ini_ide, pap_cod_ini,pap_fec_pap,pap_com_pap,pap_estado_pap) " _
+                  & "values('" & id_iniCod & "', '" & cod_iniciativa & "','" & fecha_paso_prod & "','" & coment_paso_prod & "','" & estado_paso_prod & "'  ) "
+
+
+                    dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                    dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_ini_pap, dbConexion)
+                    dbcommand.CommandType = CommandType.Text
+                    dbConexion.Open()
+                    dbcommand.ExecuteNonQuery()
+
+                    dbConexion.Close()
+
+                    dbConexion = Nothing
+                    dbcommand = Nothing
+                    dbdata = Nothing
+
+                    GoTo salir
+
+                End If
+            End If
+
 
             For i As Integer = 0 To cadEnter_paso_prod.Length - 1
+
                 fecha_paso_prod = cadEnter_paso_prod(i)
 
                 If coment_pap_val <> "" Then
@@ -1092,35 +1142,12 @@ salir:
                     estado_paso_prod = ""
                 End If
 
-                dbsql = "select count(*)  FROM [dbo].[imp_ini_pap]" _
-      & "where pap_cod_ini = '" & cod_iniciativa & "' AND pap_fec_pap = '" & fecha_paso_prod & "'  AND pap_com_pap = '" & coment_paso_prod & "'"
-
-                Debug.Print(dbsql)
-
-                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                dbcommand = New Data.Odbc.OdbcCommand(dbsql, dbConexion)
-                dbcommand.CommandType = CommandType.Text
-                dbConexion.Open()
-                dbdata = dbcommand.ExecuteReader
-
-                If dbdata.HasRows = True Then
-                    dbdata.Read()
-                    dbresult = dbdata.Item(0).ToString
-
-                    dbdata.Close()
-                    dbConexion.Close()
-
-                    dbConexion = Nothing
-                    dbcommand = Nothing
-                    dbdata = Nothing
-                End If
-
 
                 If (dbresult = "0") Then
 
                     dbinsert_imp_ini_pap = "INSERT INTO [dbo].[imp_ini_pap] " _
-                      & "(pap_ini_ide, pap_cod_ini,pap_fec_pap,pap_com_pap,pap_estado_pap) " _
-                      & "values('" & id_iniCod & "', '" & cod_iniciativa & "','" & fecha_paso_prod & "','" & coment_paso_prod & "','" & estado_paso_prod & "'  ) "
+                  & "(pap_ini_ide, pap_cod_ini,pap_fec_pap,pap_com_pap,pap_estado_pap) " _
+                  & "values('" & id_iniCod & "', '" & cod_iniciativa & "','" & fecha_paso_prod & "','" & coment_paso_prod & "','" & estado_paso_prod & "'  ) "
 
                     dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
                     dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_ini_pap, dbConexion)
@@ -1180,6 +1207,8 @@ salir:
             Dim contador As Integer = 0
             Dim query_id_iniciativa As String = ""
             Dim valor_id_iniciativa As String = "0"
+            Dim query_SQL As String = ""
+            Dim Val As String = ""
 
             cadEnter_fecha_ini = fecha_ini_val.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
             cadEnter_fecha_fin = fecha_fin_val.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
@@ -1237,97 +1266,143 @@ salir:
             dbdata = Nothing
 
 
-            For i As Integer = 0 To cadEnter_fecha_ini.Length - 1
+            query_SQL = "  Select count(pil_ini_cod_ini) FROM [dbo].[imp_ini_pil] WHERE pil_ini_cod_ini = '" & cod_ini_val & "'"
+            dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+            dbcommand = New Data.Odbc.OdbcCommand(query_SQL, dbConexion)
+            dbcommand.CommandType = CommandType.Text
+            dbConexion.Open()
+            dbdata = dbcommand.ExecuteReader
 
 
-                If (cadEnter_fecha_ini.Length = 1) Then
-                    fecha_ini_aux = "Por Confirmar"
-                Else
-                    If (cadEnter_fecha_ini.Length > contador) Then
-
-                        fecha_ini_aux = cadEnter_fecha_ini(i).Trim
-                    Else
-                        fecha_ini_aux = "Sin Datos"
-
-                    End If
-                End If
-
-
-
-                If (cadEnter_fecha_fin.Length = 1) Then
-                    fecha_fin_aux = "Por Confirmar"
-                Else
-                    If (cadEnter_fecha_fin.Length > contador) Then
-
-                        fecha_fin_aux = cadEnter_fecha_fin(i).Trim
-                    Else
-                        fecha_fin_aux = "Sin Datos"
-
-                    End If
-
-                End If
-
-
-                'If (coment_val <> "") Then
-                '    coment_aux = cadEnter_coment(i)
-                'Else
-                '    coment_aux = "-"
-                'End If
-
-                If (cadEnter_coment.Length > contador) Then
-
-                    coment_aux = cadEnter_coment(i).Trim
-                Else
-                    coment_aux = ""
-
-                End If
-
-
-
-                'If (coment_historico_val <> "") Then
-                '    coment_historico_aux = cadEnter_coment_historico(i)
-
-                'Else
-                '    coment_historico_aux = "-"
-
-                'End If
-
-                If (cadEnter_estado_piloto.Length > contador) Then
-
-                    estado_aux = cadEnter_estado_piloto(i).Trim
-                Else
-                    estado_aux = ""
-
-                End If
-
-
-                'If (fecha_actual_piloto_val <> "") Then
-                '    fecha_actual_piloto_aux = cadEnter_fecha_actual_piloto(i)
-                'Else
-                '    fecha_actual_piloto_aux = "-"
-
-                'End If
-
-                contador += 1
-
-                dbinsert_imp_ini_pil = "INSERT INTO [dbo].[" & tblNom & "] " _
-                        & "(pil_ini_ide,pil_ini_cod_ini,pil_fec_ini,pil_fec_ter,pil_com,pil_est) " _
-                        & "values('" & valor_id_iniciativa & "', '" & cod_ini_val & "','" & fecha_ini_aux & "','" & fecha_fin_aux & "', '" & coment_aux & "'," _
-                        & " '" & estado_aux & "') "
-
-                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_ini_pil, dbConexion)
-                dbcommand.CommandType = CommandType.Text
-                dbConexion.Open()
-                dbcommand.ExecuteNonQuery()
-
-                dbConexion.Close()
+            If dbdata.HasRows = True Then
+                dbdata.Read()
+                Val = dbdata.Item(0).ToString
 
                 dbConexion = Nothing
                 dbcommand = Nothing
                 dbdata = Nothing
 
-            Next
+            End If
+
+            If (Val = "0") Then
+
+                If (cadEnter_fecha_ini.Length = 0) And (cadEnter_fecha_fin.Length = 0) And (cadEnter_coment.Length = 0) Then
+
+                    dbinsert_imp_ini_pil = "INSERT INTO [dbo].[" & tblNom & "] " _
+                           & "(pil_ini_ide,pil_ini_cod_ini,pil_fec_ini,pil_fec_ter,pil_com,pil_est) " _
+                           & "values('" & valor_id_iniciativa & "', '" & cod_ini_val & "','" & fecha_ini_aux & "','" & fecha_fin_aux & "', '" & coment_aux & "'," _
+                           & " '" & estado_aux & "') "
+
+                    dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                    dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_ini_pil, dbConexion)
+                    dbcommand.CommandType = CommandType.Text
+                    dbConexion.Open()
+                    dbcommand.ExecuteNonQuery()
+
+                    dbConexion.Close()
+
+                    dbConexion = Nothing
+                    dbcommand = Nothing
+                    dbdata = Nothing
+
+                    GoTo salir
+
+                End If
+
+
+
+                For i As Integer = 0 To cadEnter_fecha_ini.Length - 1
+
+
+                    If (cadEnter_fecha_ini.Length = 1) Then
+                        fecha_ini_aux = "Por Confirmar"
+                    Else
+                        If (cadEnter_fecha_ini.Length > contador) Then
+
+                            fecha_ini_aux = cadEnter_fecha_ini(i).Trim
+                        Else
+                            fecha_ini_aux = "Sin Datos"
+
+                        End If
+                    End If
+
+
+
+                    If (cadEnter_fecha_fin.Length = 1) Then
+                        fecha_fin_aux = "Por Confirmar"
+                    Else
+                        If (cadEnter_fecha_fin.Length > contador) Then
+
+                            fecha_fin_aux = cadEnter_fecha_fin(i).Trim
+                        Else
+                            fecha_fin_aux = "Sin Datos"
+
+                        End If
+
+                    End If
+
+
+                    'If (coment_val <> "") Then
+                    '    coment_aux = cadEnter_coment(i)
+                    'Else
+                    '    coment_aux = "-"
+                    'End If
+
+                    If (cadEnter_coment.Length > contador) Then
+
+                        coment_aux = cadEnter_coment(i).Trim
+                    Else
+                        coment_aux = ""
+
+                    End If
+
+
+                    'If (coment_historico_val <> "") Then
+                    '    coment_historico_aux = cadEnter_coment_historico(i)
+
+                    'Else
+                    '    coment_historico_aux = "-"
+
+                    'End If
+
+                    If (cadEnter_estado_piloto.Length > contador) Then
+
+                        estado_aux = cadEnter_estado_piloto(i).Trim
+                    Else
+                        estado_aux = ""
+
+                    End If
+
+
+                    'If (fecha_actual_piloto_val <> "") Then
+                    '    fecha_actual_piloto_aux = cadEnter_fecha_actual_piloto(i)
+                    'Else
+                    '    fecha_actual_piloto_aux = "-"
+
+                    'End If
+
+                    contador += 1
+
+                    dbinsert_imp_ini_pil = "INSERT INTO [dbo].[" & tblNom & "] " _
+                            & "(pil_ini_ide,pil_ini_cod_ini,pil_fec_ini,pil_fec_ter,pil_com,pil_est) " _
+                            & "values('" & valor_id_iniciativa & "', '" & cod_ini_val & "','" & fecha_ini_aux & "','" & fecha_fin_aux & "', '" & coment_aux & "'," _
+                            & " '" & estado_aux & "') "
+
+                    dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                    dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_ini_pil, dbConexion)
+                    dbcommand.CommandType = CommandType.Text
+                    dbConexion.Open()
+                    dbcommand.ExecuteNonQuery()
+
+                    dbConexion.Close()
+
+                    dbConexion = Nothing
+                    dbcommand = Nothing
+                    dbdata = Nothing
+
+                Next
+            End If
+
             Log("Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: " & cod_ini_val, "exito")
 
             Console.WriteLine("Se Inserto con Exito en la Tabla Piloto con el codigo iniciativa: " & cod_ini_val)
@@ -1396,91 +1471,98 @@ salir:
 
             End If
 
-            'insert_piloto = "INSERT INTO [dbo].[imp_ini_pil_hist]" _
-            '& "(pilH_ini_ide,pilH_fec_hist_inicio,pilH_fec_hist_fin," _
-            '& "pilH_com,pilH_estado,pilH_fec_act_pil)" _
-            '& " SELECT pil_ini_ide,pil_fec_ini, pil_fec_ter, pil_com,pil_est,convert(varchar, getdate(), 120)  " _
-            '& " FROM [dbo].[imp_ini_pil] where pil_ini_ide = '" & valor_id_iniciativa & "'"
+
+            If (valor_id_iniciativa = "0") Then
+
+                If (cadEnter_fecha_hist_inicio.Length = 0) And (cadEnter_fecha_hist_fin.Length = 0) And (cadEnter_coment_hist.Length = 0) Then
+
+                    dbinsert_imp_pil_hist = "INSERT INTO [dbo].[" & tblNom & "] " _
+                       & "(pilH_ini_ide,pilH_ini_cod_ini,pilH_fec_hist_inicio,pilH_fec_hist_fin,pilH_com,pilH_estado,pilH_fec_act_pil) " _
+                       & "values('" & valor_id_iniciativa & "', '" & cod_proyecto_val & "','" & fecha_hist_ini_aux & "','" & fecha_hist_fin_aux & "', '" & coment_hist_aux & "'," _
+                       & " '" & estado_hist_aux & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "') "
 
 
-            'dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-            'dbcommand = New Data.Odbc.OdbcCommand(insert_piloto, dbConexion)
-            'dbcommand.CommandType = CommandType.Text
-            'dbConexion.Open()
-            'dbcommand.ExecuteNonQuery()
-            'Console.WriteLine("Se Inserto con Exito en la tabla Historica Piloto 1... ")
-            'dbConexion.Close()
+                    dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                    dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_pil_hist, dbConexion)
+                    dbcommand.CommandType = CommandType.Text
+                    dbConexion.Open()
+                    dbcommand.ExecuteNonQuery()
+                    dbConexion.Close()
+                    dbConexion = Nothing
+                    dbcommand = Nothing
+                    dbdata = Nothing
 
-            'dbConexion = Nothing
-            'dbcommand = Nothing
-            'dbdata = Nothing
+                    GoTo salir
 
-
-            For i As Integer = 0 To cadEnter_fecha_hist_inicio.Length - 1
-
-                If (cadEnter_fecha_hist_inicio.Length = 1) Then
-                    fecha_hist_ini_aux = "Por Confirmar"
-                Else
-                    If (cadEnter_fecha_hist_inicio.Length > contador) Then
-
-                        fecha_hist_ini_aux = cadEnter_fecha_hist_inicio(i).Trim
-                    Else
-                        fecha_hist_ini_aux = "Sin Datos"
-
-                    End If
                 End If
 
 
-                If (cadEnter_fecha_hist_fin.Length = 1) Then
-                    fecha_hist_fin_aux = "Por Confirmar"
-                Else
-                    If (cadEnter_fecha_hist_fin.Length > contador) Then
+                For i As Integer = 0 To cadEnter_fecha_hist_inicio.Length - 1
 
-                        fecha_hist_fin_aux = cadEnter_fecha_hist_fin(i).Trim
+                    If (cadEnter_fecha_hist_inicio.Length = 1) Then
+                        fecha_hist_ini_aux = "Por Confirmar"
                     Else
-                        fecha_hist_fin_aux = "Sin Datos"
+                        If (cadEnter_fecha_hist_inicio.Length > contador) Then
 
+                            fecha_hist_ini_aux = cadEnter_fecha_hist_inicio(i).Trim
+                        Else
+                            fecha_hist_ini_aux = "Sin Datos"
+
+                        End If
                     End If
 
-                End If
 
-                If (cadEnter_coment_hist.Length > contador) Then
+                    If (cadEnter_fecha_hist_fin.Length = 1) Then
+                        fecha_hist_fin_aux = "Por Confirmar"
+                    Else
+                        If (cadEnter_fecha_hist_fin.Length > contador) Then
 
-                    coment_hist_aux = cadEnter_coment_hist(i).Trim
-                Else
-                    coment_hist_aux = ""
+                            fecha_hist_fin_aux = cadEnter_fecha_hist_fin(i).Trim
+                        Else
+                            fecha_hist_fin_aux = "Sin Datos"
 
-                End If
+                        End If
+
+                    End If
+
+                    If (cadEnter_coment_hist.Length > contador) Then
+
+                        coment_hist_aux = cadEnter_coment_hist(i).Trim
+                    Else
+                        coment_hist_aux = ""
+
+                    End If
 
 
-                If (cadEnter_estado_hist.Length > contador) Then
+                    If (cadEnter_estado_hist.Length > contador) Then
 
-                    estado_hist_aux = cadEnter_estado_hist(i).Trim
-                Else
-                    estado_hist_aux = ""
+                        estado_hist_aux = cadEnter_estado_hist(i).Trim
+                    Else
+                        estado_hist_aux = ""
 
-                End If
+                    End If
 
-                contador += 1
+                    contador += 1
 
-                dbinsert_imp_pil_hist = "INSERT INTO [dbo].[" & tblNom & "] " _
-                        & "(pilH_ini_ide,pilH_ini_cod_ini,pilH_fec_hist_inicio,pilH_fec_hist_fin,pilH_com,pilH_estado,pilH_fec_act_pil) " _
-                        & "values('" & valor_id_iniciativa & "', '" & cod_proyecto_val & "','" & fecha_hist_ini_aux & "','" & fecha_hist_fin_aux & "', '" & coment_hist_aux & "'," _
-                        & " '" & estado_hist_aux & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "') "
+                    dbinsert_imp_pil_hist = "INSERT INTO [dbo].[" & tblNom & "] " _
+                            & "(pilH_ini_ide,pilH_ini_cod_ini,pilH_fec_hist_inicio,pilH_fec_hist_fin,pilH_com,pilH_estado,pilH_fec_act_pil) " _
+                            & "values('" & valor_id_iniciativa & "', '" & cod_proyecto_val & "','" & fecha_hist_ini_aux & "','" & fecha_hist_fin_aux & "', '" & coment_hist_aux & "'," _
+                            & " '" & estado_hist_aux & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "') "
 
-                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_pil_hist, dbConexion)
-                dbcommand.CommandType = CommandType.Text
-                dbConexion.Open()
-                dbcommand.ExecuteNonQuery()
+                    dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                    dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_pil_hist, dbConexion)
+                    dbcommand.CommandType = CommandType.Text
+                    dbConexion.Open()
+                    dbcommand.ExecuteNonQuery()
 
-                dbConexion.Close()
+                    dbConexion.Close()
 
-                dbConexion = Nothing
-                dbcommand = Nothing
-                dbdata = Nothing
+                    dbConexion = Nothing
+                    dbcommand = Nothing
+                    dbdata = Nothing
 
-            Next
+                Next
+            End If
             Log("Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: " & cod_proyecto_val, "exito")
             Console.WriteLine("Se Inserto con Exito los datos de la pestaña Historica Piloto")
 
@@ -1570,6 +1652,32 @@ salir:
             End If
 
             If (dbResult = "0") Then
+
+
+                If (cadEnter_fecha_ini.Length = 0) And (cadEnter_fecha_fin.Length = 0) And (cadEnter_coment.Length = 0) Then
+
+                    dbinsert_despliegue = "INSERT INTO [dbo].[" & tblNom & "] " _
+                                  & "(desp_ini_ide,desp_cod_ini,desp_fec_ini,desp_fec_ter,desp_obs,desp_est,desp_fec_act) " _
+                                  & "values('" & valor_id_iniciativa & "','" & cod_ini_val & "', '" & fecha_ini_aux & "','" & fecha_fin_aux & "', '" & coment_aux & "'," _
+                                  & " '" & estado_aux & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "') "
+
+
+                    dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                    dbcommand = New Data.Odbc.OdbcCommand(dbinsert_despliegue, dbConexion)
+                    dbcommand.CommandType = CommandType.Text
+                    dbConexion.Open()
+                    dbcommand.ExecuteNonQuery()
+                    dbConexion.Close()
+                    dbConexion = Nothing
+                    dbcommand = Nothing
+                    dbdata = Nothing
+
+                    GoTo salir
+
+
+                End If
+
+
 
                 For i As Integer = 0 To cadEnter_fecha_ini.Length - 1
 
@@ -1870,9 +1978,33 @@ salir:
         Try
             Dim dbConexion As Data.Odbc.OdbcConnection
             Dim dbcommand As Data.Odbc.OdbcCommand
+            Dim dbdata As Data.Odbc.OdbcDataReader
             Dim dbinsert_imp_ambito As String = ""
+            Dim querySQL As String = ""
+            Dim valor As String = ""
 
-            If (kick_off_val <> "") Then
+            'If (kick_off_val <> "") Then
+            querySQL = "  Select count(amb_cod_ini) FROM [dbo].[" & tblNom & "]  WHERE amb_cod_ini = '" & cod_ini_val & "'"
+            dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+            dbcommand = New Data.Odbc.OdbcCommand(querySQL, dbConexion)
+            dbcommand.CommandType = CommandType.Text
+            dbConexion.Open()
+            dbdata = dbcommand.ExecuteReader
+
+
+            If dbdata.HasRows = True Then
+                dbdata.Read()
+                valor = dbdata.Item(0).ToString
+
+                dbConexion = Nothing
+                dbcommand = Nothing
+                dbdata = Nothing
+
+            End If
+
+
+            If (valor = "0") Then
+
                 dbinsert_imp_ambito = "INSERT INTO [dbo].[" & tblNom & "] " _
                          & "(amb_ini_ide,amb_cod_ini,amb_kickoff,amb_requerimiento,amb_proc_compra,amb_infraest,amb_habilit,amb_riesg_ope,amb_seguridad,amb_comunic_est, " _
                          & " amb_sop_ope,amb_gst_camb,amb_monitoreo,amb_norm_proc_ctos,amb_coexistencia,amb_gest_recl,amb_sist_tec,amb_roles,amb_gst_indicadores,amb_instal_faena ) " _
@@ -1930,42 +2062,42 @@ salir:
             cadEnter_tema_rel = tema_relevante_value.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
             cadEnter_fecha_tema_rel = fecha_tema_relevante.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
 
-            If (tema_relevante_value <> "") Then
+            ' If (tema_relevante_value <> "") Then
 
-                query_id_iniciativa = "  Select ini_ide FROM [dbo].[imp_iniciativa] WHERE ini_cod = '" & cod_iniciativa & "'"
-                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                dbcommand = New Data.Odbc.OdbcCommand(query_id_iniciativa, dbConexion)
-                dbcommand.CommandType = CommandType.Text
-                dbConexion.Open()
-                dbdata = dbcommand.ExecuteReader
-
-
-                If dbdata.HasRows = True Then
-                    dbdata.Read()
-                    valor_id_iniciativa = dbdata.Item(0).ToString
-
-                    dbConexion = Nothing
-                    dbcommand = Nothing
-                    dbdata = Nothing
-
-                End If
+            query_id_iniciativa = "  Select ini_ide FROM [dbo].[imp_iniciativa] WHERE ini_cod = '" & cod_iniciativa & "'"
+            dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+            dbcommand = New Data.Odbc.OdbcCommand(query_id_iniciativa, dbConexion)
+            dbcommand.CommandType = CommandType.Text
+            dbConexion.Open()
+            dbdata = dbcommand.ExecuteReader
 
 
-                dbinsert_imp_tema_relevante = "INSERT INTO [dbo].[" & tblNom & "] " _
-                          & "(tema_ini_ide,tema_cod_ini,tema_relevante,fecha_relevante,fecha_actual) " _
-                          & "values('" & valor_id_iniciativa & "', '" & cod_iniciativa & "','" & tema_relevante_value & "','" & fecha_tema_relevante & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "')"
-                'Debug.Print(dbinsert_imp_tema_relevante)
+            If dbdata.HasRows = True Then
+                dbdata.Read()
+                valor_id_iniciativa = dbdata.Item(0).ToString
 
-                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_tema_relevante, dbConexion)
-                dbcommand.CommandType = CommandType.Text
-                dbConexion.Open()
-                dbcommand.ExecuteNonQuery()
-
-                Log("Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:" & cod_iniciativa, "exito")
-                Console.WriteLine("Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:" & cod_iniciativa)
+                dbConexion = Nothing
+                dbcommand = Nothing
+                dbdata = Nothing
 
             End If
+
+
+            dbinsert_imp_tema_relevante = "INSERT INTO [dbo].[" & tblNom & "] " _
+                      & "(tema_ini_ide,tema_cod_ini,tema_relevante,fecha_relevante,fecha_actual) " _
+                      & "values('" & valor_id_iniciativa & "', '" & cod_iniciativa & "','" & tema_relevante_value & "','" & fecha_tema_relevante & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "')"
+            'Debug.Print(dbinsert_imp_tema_relevante)
+
+            dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+            dbcommand = New Data.Odbc.OdbcCommand(dbinsert_imp_tema_relevante, dbConexion)
+            dbcommand.CommandType = CommandType.Text
+            dbConexion.Open()
+            dbcommand.ExecuteNonQuery()
+
+            Log("Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:" & cod_iniciativa, "exito")
+            Console.WriteLine("Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:" & cod_iniciativa)
+
+            'End If
 
         Catch ex As Exception
             Log("Se ha producido un error en la Función checkValuesTemaFields con el Codigo Iniciativa:" & cod_iniciativa & ":" & ex.Message, "error")

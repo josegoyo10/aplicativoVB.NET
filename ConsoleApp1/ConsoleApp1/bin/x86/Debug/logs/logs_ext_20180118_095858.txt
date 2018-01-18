@@ -1,0 +1,7 @@
+2018-01-18 09:58:58 : Iniciando archivo de log.
+2018-01-18 09:58:58 : Path de acceso al archivo de configuración en C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug.
+2018-01-18 09:58:58 : Archivo de configuracion: C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug\xml\config.xml.
+2018-01-18 09:58:58 : Cadena de conexion a base de datos encontrada.
+2018-01-18 09:58:58 : Carpeta base: \\wxp-jsilva97\Compartida_IF\Programa Empatia\Programa Empatia - ModeloIF\.
+2018-01-18 09:58:58 : Archivo de iniciativas: \\wxp-jsilva97\Compartida_IF\Programa Empatia\Programa Empatia - ModeloIF\Informacion Global Proyectos_FINAL.xlsx.
+Error -- 2018-01-18 09:59:00 : Error Carga Modelo General: The Microsoft Office Access database engine could not find the object '\\wxp-jsilva97\Compartida_IF\Programa Empatia\Programa Empatia - ModeloIF\Informacion Global Proyectos_FINAL.xlsx'.  Make sure the object exists and that you spell its name and the path name correctly..
