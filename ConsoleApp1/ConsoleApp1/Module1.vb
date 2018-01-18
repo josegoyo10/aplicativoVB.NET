@@ -852,101 +852,83 @@ salir:
                 End If
 
 
+
                 partes = Split(FullName, ".")
 
+                If FullName.Contains(".") Then
+                    'Console.WriteLine(FullName.Substring(0, FullName.IndexOf(".")))
 
-                If partes.Length = 2 Or partes.Length = 1 Then
+                    If partes.Length = 2 Or partes.Length = 1 Then
 
-                    apellido_pat = " "
-                Else
-                    apellido_pat = partes(2)
-                End If
+                        apellido_pat = " "
+                    Else
+                        apellido_pat = partes(2)
+                    End If
 
-                dbSQL = "select COUNT(*) AS contador from [dbo].[" & tblNom & "] where gst_nom='" & partes(0) & "' AND gst_pat = '" & partes(1) & "' AND gst_cod_ini = '" & codIniciativa & "'"
-                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                dbcommand = New Data.Odbc.OdbcCommand(dbSQL, dbConexion)
-                dbcommand.CommandType = CommandType.Text
-                dbConexion.Open()
-                dbdata = dbcommand.ExecuteReader
-
-                If dbdata.HasRows = True Then
-                    dbdata.Read()
-                    dbresultados = dbdata.Item(0).ToString
-
-                    dbdata.Close()
-                    dbConexion.Close()
-
-                    dbConexion = Nothing
-                    dbcommand = Nothing
-                    dbdata = Nothing
-                End If
-
-
-                If (dbresultados = "0") Then
-                    'Se inserta en la tabla
-                    dbinsert = "INSERT INTO [dbo].[" & tblNom & "] " _
-                   & "(gst_ini_ide,gst_cod_ini,gst_nom,gst_pat,gst_mat,gst_als,gst_tip) " _
-                   & "values('" & id_iniCod & "','" & codIniciativa & "','" & partes(0) & "','" & partes(1) & "','" & apellido_pat & "', '  ','  ') "
-
+                    dbSQL = "select COUNT(*) AS contador from [dbo].[" & tblNom & "] where gst_nom='" & partes(0) & "' AND gst_pat = '" & partes(1) & "' AND gst_cod_ini = '" & codIniciativa & "'"
                     dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                    dbcommand = New Data.Odbc.OdbcCommand(dbinsert, dbConexion)
-                    dbcommand.CommandType = CommandType.Text
-                    dbConexion.Open()
-                    dbcommand.ExecuteNonQuery()
-
-                    dbConexion.Close()
-
-                    'Luego de insertados los registros busco en la tabla los ID que se genero con la inserción'
-                    'select gst_ide from [dbo].[" & tblNom & "] 
-
-                    id_imp_Gestor = "select gst_ide from [dbo].[" & tblNom & "]  where gst_nom='" & partes(0) & "' and gst_pat='" & partes(1) & "' "
-                    dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                    dbcommand = New Data.Odbc.OdbcCommand(id_imp_Gestor, dbConexion)
+                    dbcommand = New Data.Odbc.OdbcCommand(dbSQL, dbConexion)
                     dbcommand.CommandType = CommandType.Text
                     dbConexion.Open()
                     dbdata = dbcommand.ExecuteReader
 
                     If dbdata.HasRows = True Then
                         dbdata.Read()
-                        dbresultado_ID = dbdata.Item(0).ToString
+                        dbresultados = dbdata.Item(0).ToString
 
-                        'MsgBox(dbresultados)
-                        'Luego que recupero el ID del registro que fue insertado, se procede a insertar ese ID en la siguiente tabla
+                        dbdata.Close()
+                        dbConexion.Close()
 
-                        dbinsert_ini_gst = "INSERT INTO [dbo].[imp_ini_gst] " _
-                        & "(inigst_ini_ide,inigst_cod_ini,inigst_gst_ide,inigst_rol) " _
-                        & "values('" & id_iniCod & "', '" & codIniciativa & "','" & dbresultado_ID & "','" & Rol & "' ) "
+                        dbConexion = Nothing
+                        dbcommand = Nothing
+                        dbdata = Nothing
+                    End If
 
-                        'Debug.Print(dbinsert_ini_gst)
+
+                    If (dbresultados = "0") Then
+                        'Se inserta en la tabla
+                        dbinsert = "INSERT INTO [dbo].[" & tblNom & "] " _
+                       & "(gst_ini_ide,gst_cod_ini,gst_nom,gst_pat,gst_mat,gst_als,gst_tip) " _
+                       & "values('" & id_iniCod & "','" & codIniciativa & "','" & partes(0) & "','" & partes(1) & "','" & apellido_pat & "', '  ','  ') "
 
                         dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                        dbcommand = New Data.Odbc.OdbcCommand(dbinsert_ini_gst, dbConexion)
+                        dbcommand = New Data.Odbc.OdbcCommand(dbinsert, dbConexion)
                         dbcommand.CommandType = CommandType.Text
                         dbConexion.Open()
                         dbcommand.ExecuteNonQuery()
-                        'Console.WriteLine("Se Inserto con Exito en la tabla IMP INI GESTOR... ")
 
+                        dbConexion.Close()
 
-                        'Inserto en la tabla imp_ini_gc
+                        'Luego de insertados los registros busco en la tabla los ID que se genero con la inserción'
+                        'select gst_ide from [dbo].[" & tblNom & "] 
 
-                        ' dbinsert_ini_gc = "INSERT INTO [dbo].[imp_ini_gc] " _
-                        '& "(ingc_ini_ide,ingc_gc_ide) " _
-                        '& "values('" & id_iniCod & "', '" & dbresultado_ID & "' ) "
+                        id_imp_Gestor = "select gst_ide from [dbo].[" & tblNom & "]  where gst_nom='" & partes(0) & "' and gst_pat='" & partes(1) & "' "
+                        dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                        dbcommand = New Data.Odbc.OdbcCommand(id_imp_Gestor, dbConexion)
+                        dbcommand.CommandType = CommandType.Text
+                        dbConexion.Open()
+                        dbdata = dbcommand.ExecuteReader
 
+                        If dbdata.HasRows = True Then
+                            dbdata.Read()
+                            dbresultado_ID = dbdata.Item(0).ToString
 
-                        ' dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                        ' dbcommand = New Data.Odbc.OdbcCommand(dbinsert_ini_gc, dbConexion)
-                        ' dbcommand.CommandType = CommandType.Text
-                        ' dbConexion.Open()
-                        ' dbcommand.ExecuteNonQuery()
-                        ' Console.WriteLine("Se Inserto con Exito en la tabla IMP INI GC... ")
+                            'MsgBox(dbresultados)
+                            'Luego que recupero el ID del registro que fue insertado, se procede a insertar ese ID en la siguiente tabla
 
-                        ' dbConexion.Close()
-                        ' dbdata.Close()
+                            dbinsert_ini_gst = "INSERT INTO [dbo].[imp_ini_gst] " _
+                            & "(inigst_ini_ide,inigst_cod_ini,inigst_gst_ide,inigst_rol) " _
+                            & "values('" & id_iniCod & "', '" & codIniciativa & "','" & dbresultado_ID & "','" & Rol & "' ) "
 
-                        ' dbConexion = Nothing
-                        ' dbcommand = Nothing
-                        ' dbdata = Nothing
+                            'Debug.Print(dbinsert_ini_gst)
+
+                            dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                            dbcommand = New Data.Odbc.OdbcCommand(dbinsert_ini_gst, dbConexion)
+                            dbcommand.CommandType = CommandType.Text
+                            dbConexion.Open()
+                            dbcommand.ExecuteNonQuery()
+                            'Console.WriteLine("Se Inserto con Exito en la tabla IMP INI GESTOR... ")
+                        End If
                     End If
                 End If
             Next
