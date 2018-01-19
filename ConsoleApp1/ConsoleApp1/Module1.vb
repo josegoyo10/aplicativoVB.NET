@@ -3772,7 +3772,6 @@ salirSinFilas:
              & " '" & posee_hitos_aux & "','" & hito_if_asoc_aux & "', '" & palab_claves_aux & "')"
 
 
-
                 dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
                 dbcommand = New Data.Odbc.OdbcCommand(dbinsert_ini_contact, dbConexion)
                 dbcommand.CommandType = CommandType.Text
@@ -4493,9 +4492,6 @@ salir:
 
     End Function
 
-
-
-
     '********************************************ITEM SEGUIMIENTO HISTORICO***********************************'
 
     Private Function ItemSegValuesByVal_hist(ByVal ideIniciativa As String,
@@ -4817,7 +4813,7 @@ salir:
             Dim cadEnter_hito() As String
             Dim cadEnter_preg() As String
             Dim cadEnter_resp() As String
-            Dim cadEnter_obs() As String
+            'Dim cadEnter_obs() As String
             Dim dbinsert_check_lists_ini As String = ""
             Dim dbinsert_check_listsInicial As String = ""
             Dim ambito_aux As String = ""
@@ -4866,8 +4862,7 @@ salir:
                 If (name_ambito = " ") Then
 
                     dbquery = " SELECT TOP 1  checkList_ambito FROM [dbo].[" & tblNom & "]  where checkList_ambito = '" & name & "' ORDER BY checkList_ide DESC"
-                    Debug.Print(dbquery)
-
+                    'Debug.Print(dbquery)
 
                     dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
                     dbcommand = New Data.Odbc.OdbcCommand(dbquery, dbConexion)
@@ -4920,8 +4915,7 @@ salir:
 
                     dbquery = "SELECT TOP 1  checkList_etapa FROM [dbo].[" & tblNom & "]   " _
                                & "  where checkList_ambito = '" & name & "' ORDER BY checkList_ide DESC"
-                    Debug.Print(dbquery)
-
+                    'Debug.Print(dbquery)
 
                     dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
                     dbcommand = New Data.Odbc.OdbcCommand(dbquery, dbConexion)
@@ -4987,8 +4981,11 @@ salir:
                 End If
 
                 dbSQL = "SELECT COUNT(*) AS contador from [dbo].[" & tblNom & "] where checkList_cod_ini='" & codigo_iniciativa & "' " _
-                    & "AND checkList_ambito = '" & ambito_aux & "' AND checkList_preguntas = '" & preg_aux & "' AND checkList_hito = '" & hito_aux & "' "
-                Debug.Print(dbSQL)
+                    & "AND checkList_ambito = '" & ambito_aux & "' AND checkList_accion = '" & accion_aux & "' AND checkList_etapa = '" & etapa_aux & "' " _
+                    & "AND  checkList_hito = '" & hito_aux & "' AND  checkList_preguntas = '" & preg_aux & "' AND  checkList_respuesta = '" & resp_aux & "' " _
+                    & "AND checkList_observaciones = '" & obs_aux & "'"
+
+                'Debug.Print(dbSQL)
 
                 dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
                 dbcommand = New Data.Odbc.OdbcCommand(dbSQL, dbConexion)
