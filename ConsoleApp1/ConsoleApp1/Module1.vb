@@ -1292,78 +1292,54 @@ salir:
                 End If
 
 
-
                 For i As Integer = 0 To cadEnter_fecha_ini.Length - 1
 
 
-                    If (cadEnter_fecha_ini.Length = 1) Then
-                        fecha_ini_aux = "Por Confirmar"
+                    If (cadEnter_fecha_ini.Length >= 1) Then
+                        fecha_ini_aux = cadEnter_fecha_ini(i).Trim
                     Else
-                        If (cadEnter_fecha_ini.Length > contador) Then
+                        fecha_ini_aux = ""
+            
+                    End If
 
-                            fecha_ini_aux = cadEnter_fecha_ini(i).Trim
+                    If (cadEnter_fecha_fin.Length >= 1) Then
+                        fecha_fin_aux = cadEnter_fecha_fin(i).Trim
+
+                    Else
+                        fecha_fin_aux = " "
+
+                    End If
+
+
+                    If (cadEnter_coment.Length > 1) Then
+                        Debug.Print(cadEnter_coment.LongCount)
+
+                        If (i < cadEnter_coment.Length) Then
+                            coment_aux = cadEnter_coment(i).Trim
                         Else
-                            fecha_ini_aux = "Sin Datos"
+                            If (cadEnter_coment.Length = 1) Then
+                                coment_aux = coment_val
+                            Else
+                                coment_aux = coment_val
+                            End If
+
 
                         End If
                     End If
 
 
-
-                    If (cadEnter_fecha_fin.Length = 1) Then
-                        fecha_fin_aux = "Por Confirmar"
-                    Else
-                        If (cadEnter_fecha_fin.Length > contador) Then
-
-                            fecha_fin_aux = cadEnter_fecha_fin(i).Trim
-                        Else
-                            fecha_fin_aux = "Sin Datos"
-
-                        End If
-
-                    End If
-
-
-                    'If (coment_val <> "") Then
-                    '    coment_aux = cadEnter_coment(i)
-                    'Else
-                    '    coment_aux = "-"
-                    'End If
-
-                    If (cadEnter_coment.Length > contador) Then
-
-                        coment_aux = cadEnter_coment(i).Trim
-                    Else
-                        coment_aux = ""
-
-                    End If
-
-
-                    'If (coment_historico_val <> "") Then
-                    '    coment_historico_aux = cadEnter_coment_historico(i)
-
-                    'Else
-                    '    coment_historico_aux = "-"
-
-                    'End If
-
-                    If (cadEnter_estado_piloto.Length > contador) Then
+                    If (cadEnter_estado_piloto.Length > 1) Then
 
                         estado_aux = cadEnter_estado_piloto(i).Trim
                     Else
-                        estado_aux = ""
-
+                        If (cadEnter_estado_piloto.Length = 1) Then
+                            estado_aux = estado_piloto_val
+                        Else
+                            estado_aux = ""
+                        End If
                     End If
 
 
-                    'If (fecha_actual_piloto_val <> "") Then
-                    '    fecha_actual_piloto_aux = cadEnter_fecha_actual_piloto(i)
-                    'Else
-                    '    fecha_actual_piloto_aux = "-"
-
-                    'End If
-
-                    contador += 1
 
                     dbinsert_imp_ini_pil = "INSERT INTO [dbo].[" & tblNom & "] " _
                             & "(pil_ini_ide,pil_ini_cod_ini,pil_fec_ini,pil_fec_ter,pil_com,pil_est) " _
@@ -2990,6 +2966,7 @@ salirSinFilas:
                                     ByVal cod_Iniciativa As String,
                                     ByVal nomb_archivo_value As String,
                                     ByVal fecha_act_reunion As String,
+                                    ByVal fecha_carpeta As String,
                                     ByVal id_value As String,
                                     ByVal nivel_esq_value As String,
                                     ByVal nomb_tarea_value As String,
@@ -3113,10 +3090,10 @@ salirSinFilas:
 
                 dbinsert_ini_planif = "INSERT INTO [dbo].[" & tblNom & "] " _
              & "(planif_ini_ide,planif_cod_inic,planif_id,planif_nivel_esq, " _
-             & "planif_nomb_tarea,planif_obs,planif_porct_comp,planif_duracion,planif_comienzo,planif_fin,planif_predecesor,planif_fecha_act,planif_nombre_act,planif_obj_act,planif_file_fec,planif_file_arc) " _
+             & "planif_nomb_tarea,planif_obs,planif_porct_comp,planif_duracion,planif_comienzo,planif_fin,planif_predecesor,planif_fecha_act,planif_nombre_act,planif_obj_act,planif_file_fec,planif_file_arc,planif_fec_realizacion) " _
              & "values('" & id_iniciativa & "', '" & cod_Iniciativa & "','" & id_aux & "','" & nivel_esq_aux & "',  " _
-             & " '" & nomb_tarea_aux & "','" & obs_aux & "','" & porc_comp_aux & "','" & duracion_aux & "','" & comienzo_aux & "','" & fin_aux & "','" & predec_aux & "','" & fecha_act_reunion & "', " _
-             & " '" & nombre_actualiz_aux & "','" & obj_actualiz_aux & "','" & fecha_carga & "','" & nomb_archivo_value & "')"
+             & " '" & nomb_tarea_aux & "','" & obs_aux & "','" & porc_comp_aux & "','" & duracion_aux & "','" & comienzo_aux & "','" & fin_aux & "','" & predec_aux & "','" & fecha_carpeta & "', " _
+             & " '" & nombre_actualiz_aux & "','" & obj_actualiz_aux & "','" & fecha_carga & "','" & nomb_archivo_value & "','" & fecha_act_reunion & "')"
 
 
                 'Debug.Print(dbinsert_ini_planif)
@@ -3532,7 +3509,7 @@ salirSinFilas:
 
     '*************************************************************REUNIÓN PERIODICA***************************************
 
-    Public Sub ModeloReunionPeriodica(idIniciativa, codIniciativa, nombArchivo, fecha_actualizacion_reunion)
+    Public Sub ModeloReunionPeriodica(idIniciativa, codIniciativa, nombArchivo, fecha_actualizacion_reunion, fecha_carpeta)
 
         Dim adoCon As New Data.OleDb.OleDbConnection
         Dim adoRs As Data.OleDb.OleDbDataReader
@@ -3617,7 +3594,7 @@ salirSinFilas:
                 Do While adoRs.Read()
 
                     contfilas = contfilas + 1
-                    idReunionP = ReunionPValuesByVal(idIniciativa, codIniciativa, nombArchivo, fecha_actualizacion_reunion, Convert.ToString(adoRs.Item(0)).Trim, Convert.ToString(adoRs.Item(1)).Trim, CleanInput(Convert.ToString(adoRs.Item(2))).Trim, Convert.ToString(adoRs.Item(3)).Trim, Convert.ToString(adoRs.Item(4)).Trim, Convert.ToString(adoRs.Item(5)).Trim, Convert.ToString(adoRs.Item(6)).Trim, Convert.ToString(adoRs.Item(7)).Trim, Convert.ToString(adoRs.Item(8)).Trim, Convert.ToString(adoRs.Item(9)).Trim, Convert.ToString(adoRs.Item(10)).Trim, Convert.ToString(adoRs.Item(11)).Trim, contfilas, "imp_planificacion_reunion_periodica")
+                    idReunionP = ReunionPValuesByVal(idIniciativa, codIniciativa, nombArchivo, fecha_actualizacion_reunion, fecha_carpeta, Convert.ToString(adoRs.Item(0)).Trim, Convert.ToString(adoRs.Item(1)).Trim, CleanInput(Convert.ToString(adoRs.Item(2))).Trim, Convert.ToString(adoRs.Item(3)).Trim, Convert.ToString(adoRs.Item(4)).Trim, Convert.ToString(adoRs.Item(5)).Trim, Convert.ToString(adoRs.Item(6)).Trim, Convert.ToString(adoRs.Item(7)).Trim, Convert.ToString(adoRs.Item(8)).Trim, Convert.ToString(adoRs.Item(9)).Trim, Convert.ToString(adoRs.Item(10)).Trim, Convert.ToString(adoRs.Item(11)).Trim, contfilas, "imp_planificacion_reunion_periodica")
                 Loop
             Else
                 GoTo salirSinFilas
@@ -5945,12 +5922,16 @@ salir:
         Dim archivoFinal As String
         Dim numMaxArchivo As String
         Dim fecha_act_reunion_period As String
+        Dim fecha_carpeta As String = ""
 
         carpetasLcl = System.IO.Directory.GetDirectories(Carpeta)
         archivosLcl = System.IO.Directory.GetFiles(Carpeta)
 
-        For x = 0 To carpetasLcl.Length - 1
+        fecha_carpeta = ""
 
+        For x = 0 To carpetasLcl.Length - 1
+            'Debug.Print(carpetasLcl(0).Split("\").GetValue((carpetasLcl(0).Split("\").Length) - 1))
+            fecha_carpeta = carpetasLcl(x).Split("\").GetValue((carpetasLcl(x).Split("\").Length) - 1)
             archivosLcl = System.IO.Directory.GetFiles(carpetasLcl(x))
 
             If archivosLcl.Length >= 1 Then
@@ -5996,7 +5977,7 @@ salir:
                                         Console.WriteLine("4. Procesando archivo : " & archivoExcelRP)
 
                                         'Reunion Periodica'
-                                        Call ModeloReunionPeriodica(ideIniciativa, CodIniciativa, archivoExcelRP, fecha_ult_reunion_periodica)
+                                        Call ModeloReunionPeriodica(ideIniciativa, CodIniciativa, archivoExcelRP, fecha_ult_reunion_periodica, fecha_carpeta)
 
                                         Console.WriteLine("4. Archivo procesado: " & archivoExcelRP)
 
