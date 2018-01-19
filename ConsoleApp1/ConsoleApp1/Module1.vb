@@ -1311,7 +1311,7 @@ salir:
                     End If
 
 
-                    If (cadEnter_coment.Length > 1) Then
+                    If (cadEnter_coment.Length >= 1) Then
                         Debug.Print(cadEnter_coment.LongCount)
 
                         If (i < cadEnter_coment.Length) Then
@@ -4839,6 +4839,8 @@ salir:
             Dim MessageExito As String = ""
             Dim name_ambito As String = ""
             Dim dbSQL As String = ""
+            Dim dbUpdate As String = ""
+
             name = nombre.Substring(0, position)
             If (ambito_value = "Convivencia") Then
                 name_ambito = "Coexistencia"
@@ -4981,9 +4983,7 @@ salir:
                 End If
 
                 dbSQL = "SELECT COUNT(*) AS contador from [dbo].[" & tblNom & "] where checkList_cod_ini='" & codigo_iniciativa & "' " _
-                    & "AND checkList_ambito = '" & ambito_aux & "' AND checkList_accion = '" & accion_aux & "' AND checkList_etapa = '" & etapa_aux & "' " _
-                    & "AND  checkList_hito = '" & hito_aux & "' AND  checkList_preguntas = '" & preg_aux & "' AND  checkList_respuesta = '" & resp_aux & "' " _
-                    & "AND checkList_observaciones = '" & obs_aux & "'"
+                    & "AND checkList_ambito = '" & ambito_aux & "' AND checkList_hito = '" & hito_aux & "'  AND checkList_preguntas = '" & preg_aux & "'"
 
                 'Debug.Print(dbSQL)
 
@@ -5028,6 +5028,7 @@ salir:
                     MessageExito = "Se Inserto con Exito en la Tabla el Ambito del Checklist: " & codigo_iniciativa & " - Fila " & contfilas
                     Log(MessageExito, "exito")
                     Console.WriteLine("Se Inserto con Exito en la Tabla el Ambito del Checklist: " & codigo_iniciativa)
+
                 End If
 
             Next
