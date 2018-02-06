@@ -5910,7 +5910,7 @@ salir:
 
     End Sub
 
-    '***********************************************FUNCION RECURSIVA REUNIÓN PERIODICA*****************************************************
+    '***********************************************FUNCION RECURSIVA REUNIÓN PERIODICA CAMBIOS ANTES DE FERNANDO HOY 06-02-2018*****************************************************
     Private Function archivosCarpetas(ByVal Carpeta As String, ByVal ideIniciativa As String, ByVal CodIniciativa As String)
 
         Dim carpetasLcl() As String
