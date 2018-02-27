@@ -1,0 +1,6 @@
+2018-02-06 12:27:24 : Iniciando archivo de log.
+2018-02-06 12:27:24 : Path de acceso al archivo de configuración en C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\Debug.
+2018-02-06 12:27:25 : Archivo de configuracion: C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\Debug\xml\config.xml.
+2018-02-06 12:27:26 : Cadena de conexion a base de datos encontrada.
+2018-02-06 12:27:26 : Carpeta base: C:\Proyectos Modelo IF\.
+2018-02-06 12:27:26 : Archivo de iniciativas: C:\Proyectos Modelo IF\Informacion Global Proyectos_FINAL.xlsx.

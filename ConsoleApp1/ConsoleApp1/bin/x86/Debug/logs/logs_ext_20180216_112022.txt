@@ -1,0 +1,815 @@
+2018-02-16 11:20:22 : Iniciando archivo de log.
+2018-02-16 11:20:22 : Path de acceso al archivo de configuración en C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug.
+2018-02-16 11:20:22 : Archivo de configuracion: C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\x86\Debug\xml\config.xml.
+2018-02-16 11:20:22 : Cadena de conexion a base de datos encontrada.
+2018-02-16 11:20:22 : Carpeta base: C:\Proyectos Modelo IF\.
+2018-02-16 11:20:22 : Archivo de iniciativas: C:\Proyectos Modelo IF\Informacion Global Proyectos_FINAL.xlsx.
+2018-02-16 11:20:22 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:22 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:22 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:22 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:22 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:22 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: ANF123.
+2018-02-16 11:20:22 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: ANF123.
+2018-02-16 11:20:22 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: ANF123.
+2018-02-16 11:20:22 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: ANF123.
+2018-02-16 11:20:22 : Se Inserto con Exito en la tabla ambito con el codigo:1.
+2018-02-16 11:20:22 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: ANF123.
+2018-02-16 11:20:22 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:22 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:23 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: DIG.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: DIG.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: DIG.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: DIG.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla ambito con el codigo:2.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: DIG.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:23 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:23 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: CUS.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: CUS.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: CUS.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: CUS.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla ambito con el codigo:3.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: CUS.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:23 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:23 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: PRE.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: PRE.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: PRE.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: PRE.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla ambito con el codigo:4.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: PRE.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:23 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: NOTI.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: NOTI.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: NOTI.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: NOTI.
+2018-02-16 11:20:23 : Se Inserto con Exito en la tabla ambito con el codigo:5.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: NOTI.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:24 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: CASH.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: CASH.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: CASH.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: CASH.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla ambito con el codigo:6.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: CASH.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:24 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: COMEX.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: COMEX.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: COMEX.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: COMEX.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla ambito con el codigo:7.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: COMEX.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:24 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:24 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: NWM.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: NWM.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: NWM.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: NWM.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla ambito con el codigo:8.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: NWM.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:24 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: TEF.
+2018-02-16 11:20:24 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: TEF.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: TEF.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: TEF.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla ambito con el codigo:9.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: TEF.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:25 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: CCH.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: CCH.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: CCH.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: CCH.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla ambito con el codigo:10.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: CCH.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:25 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: PYA.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: PYA.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: PYA.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: PYA.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla ambito con el codigo:11.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: PYA.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:25 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:25 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:25 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: BIO.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: BIO.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: BIO.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: BIO.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla ambito con el codigo:12.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: BIO.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:26 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:26 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: TCHI.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: TCHI.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: TCHI.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: TCHI.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla ambito con el codigo:13.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: TCHI.
+2018-02-16 11:20:26 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:26 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: EDT.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: EDT.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: EDT.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: EDT.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla ambito con el codigo:14.
+2018-02-16 11:20:26 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: EDT.
+2018-02-16 11:20:27 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:27 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: TOW.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: TOW.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: TOW.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: TOW.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla ambito con el codigo:15.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: TOW.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:27 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:27 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: EXP.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: EXP.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: EXP.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: EXP.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla ambito con el codigo:16.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: EXP.
+2018-02-16 11:20:27 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: TSR.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: TSR.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: TSR.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: TSR.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla ambito con el codigo:17.
+2018-02-16 11:20:27 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: TSR.
+2018-02-16 11:20:27 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: MDC.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: MDC.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: MDC.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: MDC.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla ambito con el codigo:18.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: MDC.
+2018-02-16 11:20:28 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: PBS.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: PBS.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: PBS.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: PBS.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla ambito con el codigo:19.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: PBS.
+2018-02-16 11:20:28 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: OWP.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: OWP.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: OWP.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: OWP.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla ambito con el codigo:20.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: OWP.
+2018-02-16 11:20:28 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: CRUT.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: CRUT.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: CRUT.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: CRUT.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla ambito con el codigo:21.
+2018-02-16 11:20:28 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: CRUT.
+2018-02-16 11:20:28 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: AST.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: AST.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: AST.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: AST.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla ambito con el codigo:22.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: AST.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:29 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:29 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: TCH.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: TCH.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: TCH.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: TCH.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla ambito con el codigo:23.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: TCH.
+2018-02-16 11:20:29 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:29 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: DISP.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: DISP.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: DISP.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: DISP.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla ambito con el codigo:24.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: DISP.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:29 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:29 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: PGR.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: PGR.
+2018-02-16 11:20:29 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: PGR.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: PGR.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla ambito con el codigo:25.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: PGR.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:30 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: VCI.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: VCI.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: VCI.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: VCI.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla ambito con el codigo:26.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: VCI.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:30 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:30 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: APP.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: APP.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: APP.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: APP.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla ambito con el codigo:27.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: APP.
+2018-02-16 11:20:30 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: PGR2.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: PGR2.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: PGR2.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: PGR2.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla ambito con el codigo:28.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: PGR2.
+2018-02-16 11:20:30 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:30 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: EXPM.
+2018-02-16 11:20:30 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: EXPM.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: EXPM.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: EXPM.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla ambito con el codigo:29.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: EXPM.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:31 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:31 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: PRS.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: PRS.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: PRS.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: PRS.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla ambito con el codigo:30.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: PRS.
+2018-02-16 11:20:31 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:31 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: TRD2.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: TRD2.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: TRD2.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: TRD2.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla ambito con el codigo:31.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: TRD2.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:31 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:31 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: PCH.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: PCH.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: PCH.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: PCH.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla ambito con el codigo:32.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: PCH.
+2018-02-16 11:20:31 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:31 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: COM.
+2018-02-16 11:20:31 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: COM.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: COM.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: COM.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla ambito con el codigo:33.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: COM.
+2018-02-16 11:20:32 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: ACP.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: ACP.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: ACP.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: ACP.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla ambito con el codigo:34.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: ACP.
+2018-02-16 11:20:32 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:32 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: EJEC.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: EJEC.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: EJEC.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: EJEC.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla ambito con el codigo:35.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: EJEC.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: DMOD.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: DMOD.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: DMOD.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: DMOD.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla ambito con el codigo:36.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: DMOD.
+2018-02-16 11:20:32 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:32 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: SOF.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: SOF.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: SOF.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: SOF.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla ambito con el codigo:37.
+2018-02-16 11:20:32 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: SOF.
+2018-02-16 11:20:33 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: ATM.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: ATM.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: ATM.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: ATM.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla ambito con el codigo:38.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: ATM.
+2018-02-16 11:20:33 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: NOTIF.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: NOTIF.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: NOTIF.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: NOTIF.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla ambito con el codigo:39.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: NOTIF.
+2018-02-16 11:20:33 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: TVP.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: TVP.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: TVP.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: TVP.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla ambito con el codigo:40.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: TVP.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:33 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:33 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: EE.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: EE.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: EE.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: EE.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla ambito con el codigo:41.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: EE.
+2018-02-16 11:20:33 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: BIOEMT.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: BIOEMT.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: BIOEMT.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: BIOEMT.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla ambito con el codigo:42.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: BIOEMT.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: FWB.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: FWB.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: FWB.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: FWB.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla ambito con el codigo:43.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: FWB.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:34 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: CTR.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: CTR.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: CTR.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: CTR.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla ambito con el codigo:44.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: CTR.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:34 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:34 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: TUC.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: TUC.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: TUC.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: TUC.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla ambito con el codigo:45.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: TUC.
+2018-02-16 11:20:34 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:34 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: PCC.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: PCC.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: PCC.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: PCC.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla ambito con el codigo:46.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: PCC.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla IMP INI GC de la funcion checkGantCubo.
+2018-02-16 11:20:35 : Se inserto con exito en la tabla: imp_jp.
+2018-02-16 11:20:35 : Se inserto con exito en la tabla: imp_ldr.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: WEB.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: WEB.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: WEB.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: WEB.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla ambito con el codigo:47.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: WEB.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla IMP GESTOR en la Función check_Gestores_otro_Miembros.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla IMP INI PAP en la Función checkValuespasoProd_comment.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Historica de Piloto con el codigo iniciativa: TRD.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Piloto con el codigo iniciativa: TRD.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Historica de Despliegue con el codigo iniciativa: TRD.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Despliegue con el codigo iniciativa: TRD.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla ambito con el codigo:48.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla Historica de Temas Relevantes con el Codigo Iniciativa: TRD.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:ANF123.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:DIG.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:CUS.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:PRE.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:NOTI.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:CASH.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:COMEX.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:NWM.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:TEF.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:CCH.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:PYA.
+2018-02-16 11:20:35 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:BIO.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:TCHI.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:EDT.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:TOW.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:EXP.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:TSR.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:MDC.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:PBS.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:OWP.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:CRUT.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:AST.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:TCH.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:DISP.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:PGR.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:VCI.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:APP.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:PGR2.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:EXPM.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:PRS.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:TRD2.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:PCH.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:COM.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:ACP.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:EJEC.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:DMOD.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:SOF.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:ATM.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:NOTIF.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:TVP.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:EE.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:BIOEMT.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:FWB.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:CTR.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:TUC.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:PCC.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:WEB.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:TRD.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:.
+2018-02-16 11:20:36 : Se Inserto con Exito en la tabla tema relevante del Codigo Iniciativa:.
+2018-02-16 11:20:36 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: ANF123.
+2018-02-16 11:20:36 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: DIG.
+2018-02-16 11:20:36 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: CUS.
+2018-02-16 11:20:36 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: PRE.
+2018-02-16 11:20:36 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: TCHI.
+2018-02-16 11:20:36 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: EDT.
+2018-02-16 11:20:36 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: TOW.
+2018-02-16 11:20:36 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: CRUT.
+2018-02-16 11:20:37 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: TCH.
+2018-02-16 11:20:37 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: VCI.
+2018-02-16 11:20:37 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: APP.
+2018-02-16 11:20:37 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: PRS.
+2018-02-16 11:20:37 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: PCH.
+2018-02-16 11:20:37 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: COM.
+2018-02-16 11:20:37 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: EE.
+2018-02-16 11:20:37 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: CTR.
+2018-02-16 11:20:37 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: TUC.
+2018-02-16 11:20:37 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: PCC.
+2018-02-16 11:20:37 : Se Inserto con Exito los datos de la pestaña Historica Piloto con el codigo: WEB.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: ANF123.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: DIG.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: TCHI.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: EDT.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: TOW.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: CRUT.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: TCH.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: VCI.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: APP.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: PGR2.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: COM.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: EE.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: CTR.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: TUC.
+2018-02-16 11:20:37 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: PCC.
+2018-02-16 11:20:38 : Se Inserto con Exito en la tabla Historica Despliegue con el codigo: WEB.
+2018-02-16 11:20:38 : 2. Procesando archivo : C:\Proyectos Modelo IF\MDC - Motor de Convenios\2.-Check List\1 - Check List Inicial MDC_24-08-2017.xlsx.
+2018-02-16 11:20:41 : 3. Procesando archivo : 5 - Planificación MDC_21-09-2017.xlsx.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 1.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 2.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 3.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 4.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 5.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 6.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 7.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 8.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 9.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 10.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 11.
+2018-02-16 11:20:41 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 12.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 13.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 14.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 15.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 16.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 17.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 18.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 19.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 20.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 21.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 22.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 23.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 24.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 25.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 26.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 27.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 28.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 29.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 30.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 31.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 32.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 33.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 34.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 35.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 36.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 37.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 38.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 39.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 40.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 41.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 42.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 43.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 44.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 45.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 46.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 47.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 48.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 49.
+2018-02-16 11:20:42 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 50.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 51.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 52.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 53.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 54.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 55.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 56.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 57.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 58.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 59.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 60.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 61.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 62.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 63.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 64.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 65.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 66.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 67.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 68.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 69.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 70.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 71.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 72.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 73.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 74.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 75.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 76.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 77.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 78.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 79.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 80.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 81.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 82.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 83.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 84.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 85.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 86.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 87.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 88.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 89.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 90.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 91.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 92.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 93.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 94.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 95.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 96.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 97.
+2018-02-16 11:20:43 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 98.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 99.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 100.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 101.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 102.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 103.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 104.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 105.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 106.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 107.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 108.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 109.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 110.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 111.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 112.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 113.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 114.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 115.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 116.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 117.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 118.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 119.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 120.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 121.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 122.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 123.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 124.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 125.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 126.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 127.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 128.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 129.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 130.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 131.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 132.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 133.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 134.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 135.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 136.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 137.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 138.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 139.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 140.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 141.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 142.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 143.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 144.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 145.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 146.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 147.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 148.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 149.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 150.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 151.
+2018-02-16 11:20:44 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 152.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 153.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 154.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 155.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 156.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 157.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 158.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 159.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 160.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 161.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 162.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 163.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 164.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 165.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 166.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 167.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 168.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 169.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 170.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 171.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 172.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 173.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 174.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 175.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 176.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 177.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 178.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 179.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 180.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 181.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 182.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 183.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 184.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 185.
+2018-02-16 11:20:45 : Se Inserto con Exito en la tabla Planificacion con el Codigo de Iniciativa: MDC - Fila 186.
+2018-02-16 11:20:45 : 4. Archivo procesado: "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-10-02\1 - Planificación_MDC_02-10-2017.xlsx".
+2018-02-16 11:20:45 : Archivo "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-10-02\1 - Planificación_MDC_02-10-2017.xlsx" de reunion periodica asociado al código : MDC, se encuentra cargado en el sistema.
+2018-02-16 11:20:45 : 4. Archivo procesado: "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-10-16\1 - Planificación_MDC_16-10-2017.xlsx".
+2018-02-16 11:20:45 : Archivo "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-10-16\1 - Planificación_MDC_16-10-2017.xlsx" de reunion periodica asociado al código : MDC, se encuentra cargado en el sistema.
+2018-02-16 11:20:45 : 4. Archivo procesado: "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-10-23\1 - Planificación_MDC_23-10-2017.xlsx".
+2018-02-16 11:20:45 : Archivo "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-10-23\1 - Planificación_MDC_23-10-2017.xlsx" de reunion periodica asociado al código : MDC, se encuentra cargado en el sistema.
+2018-02-16 11:20:45 : 4. Archivo procesado: "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-11-06\1 - Planificación_MDC_06-11-2017.xlsx".
+2018-02-16 11:20:45 : Archivo "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-11-06\1 - Planificación_MDC_06-11-2017.xlsx" de reunion periodica asociado al código : MDC, se encuentra cargado en el sistema.
+2018-02-16 11:20:45 : 4. Archivo procesado: "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-11-13\1 - Planificación_MDC_13-11-2017.xlsx".
+2018-02-16 11:20:45 : Archivo "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-11-13\1 - Planificación_MDC_13-11-2017.xlsx" de reunion periodica asociado al código : MDC, se encuentra cargado en el sistema.
+2018-02-16 11:20:45 : 4. Archivo procesado: "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-11-20\1 - Planificación_MDC_20-11-2017.xlsx".
+2018-02-16 11:20:45 : Archivo "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-11-20\1 - Planificación_MDC_20-11-2017.xlsx" de reunion periodica asociado al código : MDC, se encuentra cargado en el sistema.
+2018-02-16 11:20:45 : 4. Archivo procesado: "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-11-27\1 - Planificación_MDC_26-11-2017.xlsx".
+2018-02-16 11:20:45 : Archivo "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-11-27\1 - Planificación_MDC_26-11-2017.xlsx" de reunion periodica asociado al código : MDC, se encuentra cargado en el sistema.
+2018-02-16 11:20:45 : 4. Archivo procesado: "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-12-05\1 - Planificación_MDC_04-12-2017.xlsx".
+2018-02-16 11:20:46 : Archivo "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-12-05\1 - Planificación_MDC_04-12-2017.xlsx" de reunion periodica asociado al código : MDC, se encuentra cargado en el sistema.
+2018-02-16 11:20:46 : 4. Archivo procesado: "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-12-12\1 - Planificación_MDC_11-12-2017.xlsx".
+2018-02-16 11:20:46 : Archivo "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-12-12\1 - Planificación_MDC_11-12-2017.xlsx" de reunion periodica asociado al código : MDC, se encuentra cargado en el sistema.
+2018-02-16 11:20:46 : 4. Archivo procesado: "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-12-18\1 - Planificación_MDC_17-12-2017.xlsx".
+2018-02-16 11:20:46 : Archivo "C:\Proyectos Modelo IF\MDC - Motor de Convenios\4.-Reunión Periódica\2017-12-18\1 - Planificación_MDC_17-12-2017.xlsx" de reunion periodica asociado al código : MDC, se encuentra cargado en el sistema.
+2018-02-16 11:20:46 : 5. Procesando archivo : MDC - Administrador Compromisos.xlsx.
+2018-02-16 11:29:24 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 1.
+2018-02-16 11:33:14 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 1.
+2018-02-16 11:33:21 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 2.
+2018-02-16 11:33:21 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 3.
+2018-02-16 11:33:21 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 4.
+2018-02-16 11:33:21 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 5.
+2018-02-16 11:33:21 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 6.
+2018-02-16 11:33:21 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 7.
+2018-02-16 11:33:21 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 8.
+2018-02-16 11:33:21 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 9.
+2018-02-16 11:33:21 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 10.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 11.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 12.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 13.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 14.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 15.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 16.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 17.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 18.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 19.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 20.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 21.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 22.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 23.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 24.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 25.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 26.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 27.
+2018-02-16 11:33:22 : Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : MDC - Fila 28.
+2018-02-16 11:33:23 : Se Inserto con Exito en la tabla Item Seguimientos Acuerdos con el codigo Iniciativa : MDC - Fila 1.
+2018-02-16 11:33:23 : Se Inserto con Exito en la tabla Item Seguimientos Acuerdos con el codigo Iniciativa : MDC - Fila 2.
+2018-02-16 11:33:23 : Se Inserto con Exito en la tabla Item Seguimientos Acuerdos con el codigo Iniciativa : MDC - Fila 3.
+2018-02-16 11:33:23 : Se Inserto con Exito en la tabla Item Seguimientos Acuerdos con el codigo Iniciativa : MDC - Fila 4.
+2018-02-16 11:33:24 : Terminando archivo de log.

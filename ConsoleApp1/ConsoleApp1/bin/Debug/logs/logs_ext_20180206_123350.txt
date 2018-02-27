@@ -1,0 +1,7 @@
+2018-02-06 12:33:50 : Iniciando archivo de log.
+2018-02-06 12:33:50 : Path de acceso al archivo de configuración en C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\Debug.
+2018-02-06 12:33:50 : Archivo de configuracion: C:\Desarrollo SIF\dotNet\ConsoleApp1\ConsoleApp1\bin\Debug\xml\config.xml.
+2018-02-06 12:33:53 : Cadena de conexion a base de datos encontrada.
+2018-02-06 12:33:53 : Carpeta base: C:\Proyectos Modelo IF\.
+2018-02-06 12:33:54 : Archivo de iniciativas: C:\Proyectos Modelo IF\Informacion Global Proyectos_FINAL.xlsx.
+Error -- 2018-02-06 12:34:32 : Error Carga Modelo General: El proveedor 'Microsoft.ACE.OLEDB.12.0' no está registrado en el equipo local..
