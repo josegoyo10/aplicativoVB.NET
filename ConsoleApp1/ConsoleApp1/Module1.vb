@@ -2562,11 +2562,19 @@ salirSinFilas:
         Dim adoCmd As Data.OleDb.OleDbCommand
         Dim strCmnd As String = "SELECT * FROM [Pilotos Historicos$]"
 
-        adoCon = New Data.OleDb.OleDbConnection(GetConnectionString(1))
-        adoCmd = New Data.OleDb.OleDbCommand(strCmnd, adoCon)
-        adoCmd.CommandType = CommandType.Text
-        adoCon.Open()
-        adoRs = adoCmd.ExecuteReader
+
+        Try
+            adoCon = New Data.OleDb.OleDbConnection(GetConnectionString(1))
+            adoCmd = New Data.OleDb.OleDbCommand(strCmnd, adoCon)
+            adoCmd.CommandType = CommandType.Text
+            adoCon.Open()
+            adoRs = adoCmd.ExecuteReader
+
+        Catch ex As Exception
+            GoTo salirSinFilas
+
+        End Try
+ 
 
         Try
             If adoRs.HasRows Then
@@ -2697,11 +2705,23 @@ salirSinFilas:
         Dim fechaActDespliegue As String = ""
         Dim fechaHistIni As String = ""
 
-        adoCon = New Data.OleDb.OleDbConnection(GetConnectionString(1))
-        adoCmd = New Data.OleDb.OleDbCommand(strCmnd, adoCon)
-        adoCmd.CommandType = CommandType.Text
-        adoCon.Open()
-        adoRs = adoCmd.ExecuteReader
+        'adoCon = New Data.OleDb.OleDbConnection(GetConnectionString(1))
+        'adoCmd = New Data.OleDb.OleDbCommand(strCmnd, adoCon)
+        'adoCmd.CommandType = CommandType.Text
+        'adoCon.Open()
+        'adoRs = adoCmd.ExecuteReader
+
+        Try
+            adoCon = New Data.OleDb.OleDbConnection(GetConnectionString(1))
+            adoCmd = New Data.OleDb.OleDbCommand(strCmnd, adoCon)
+            adoCmd.CommandType = CommandType.Text
+            adoCon.Open()
+            adoRs = adoCmd.ExecuteReader
+
+        Catch ex As Exception
+            GoTo salirSinFilas
+        End Try
+
 
         Try
 
@@ -4138,10 +4158,14 @@ salirSinFilas:
             Dim MessageExito As String = ""
             Dim fecha_condicion As String = ""
             Dim dbinsert_item_seg_historico = ""
-            Dim dbquery As String
             Dim comentario As String = ""
             Dim comentario_aux As String = ""
-            Dim Arreglo_Comentarios As New List(Of String)
+            Dim fecha_historica As Integer = 0
+            Dim fecha As String
+            Dim dbRowCount As String
+            Dim dbresultado As String
+
+
 
             'fecha_venc_value.Split("/", "-")
             If (cod_int_value <> "") Then
@@ -4178,38 +4202,11 @@ salirSinFilas:
 
                 condicion_aux = ""
 
-                For i As Integer = 0 To cadLoop
+                For i As Integer = cadLoop To 0 Step -1
+
+                    'For i As Integer = 0 To cadLoop
 
                     If (cadEnter_fecha_replanif.Length > 1) Then
-
-                        'query = "SELECT DATEDIFF(dd, '" & DateTime.Now.ToString("yyyy-MM-dd") & "', '" & fecha_venc_value & "'); "
-                        'dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                        'dbcommand = New Data.Odbc.OdbcCommand(query, dbConexion)
-                        'dbcommand.CommandType = CommandType.Text
-                        'dbConexion.Open()
-                        'dbdata = dbcommand.ExecuteReader
-
-                        'If dbdata.HasRows = True Then
-                        '    dbdata.Read()
-                        '    dbresultados = dbdata.Item(0).ToString
-
-                        '    If (dbresultados < 1) Then
-
-                        '        condicion_aux = "Rojo"
-                        '    Else
-                        '        If (dbresultados > 1) And (dbresultados <= 3) Then
-
-                        '            condicion_aux = "Amarillo"
-                        '        Else
-                        '            If (dbresultados > 3) Then
-
-                        '                condicion_aux = "Verde"
-
-                        '            End If
-
-                        '        End If
-                        '    End If
-                        'End If
 
                         If (cat2_value <> "") Then
                             cat2_aux = cadEnter_cat2(0)
@@ -4296,39 +4293,6 @@ salirSinFilas:
                         End If
                     Else
 
-                        'query = "SELECT DATEDIFF(dd, '" & DateTime.Now.ToString("yyyy-MM-dd") & "', '" & fecha_condicion & "'); "
-                        'query = "SELECT DATEDIFF(dd,  '" & fecha_venc_value & "','" & DateTime.Now.ToString("yyyy-MM-dd") & "'); "
-                        'Debug.Print(query)
-
-                        'dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                        'dbcommand = New Data.Odbc.OdbcCommand(query, dbConexion)
-                        'dbcommand.CommandType = CommandType.Text
-                        'dbConexion.Open()
-                        'dbdata = dbcommand.ExecuteReader
-
-                        'If dbdata.HasRows = True Then
-                        '    dbdata.Read()
-                        '    dbresultados = dbdata.Item(0).ToString
-
-                        '    If (dbresultados < 1) Then
-
-                        '        condicion_aux = "Rojo"
-                        '    Else
-                        '        If (dbresultados > 1) And (dbresultados <= 3) Then
-
-                        '            condicion_aux = "Amarillo"
-                        '        Else
-                        '            If (dbresultados > 3) Then
-
-                        '                condicion_aux = "Verde"
-
-                        '            End If
-
-                        '        End If
-                        '    End If
-                        'End If
-
-
                         If (cat2_value <> "") Then
                             cat2_aux = cadEnter_cat2(i)
                         Else
@@ -4414,113 +4378,57 @@ salirSinFilas:
 
                     End If
 
+                    If (cadEnter_fecha_replanif.Length > 0) Then
+                        fecha = (cadEnter_fecha_replanif.Last)
+                        Console.WriteLine(i)
+                    Else
+                        fecha = fecha_replanif_aux
+
+                    End If
+
+                    If (i = 0) Then
+
+                        dbinsert_item_seg = "IF NOT EXISTS(SELECT item_seg_ide " &
+                                            "FROM [dbo].[" & tblNom & "] " &
+                                            "WHERE item_seg_cod_ini='" & CodIniciativa & "' AND item_seg_correl='" & correl_cod_proy_aux & "' " _
+                                             & "AND item_seg_cod_int='" & cod_int_aux & "' " _
+                                             & "AND item_seg_compromisos='" & compromisos_aux & "' AND item_seg_fecha_venc = '" & fecha_venc_aux & "' AND item_seg_cant_replanif = '" & cantidad_replanif_aux & "'  " _
+                                             & "AND item_seg_resp_comp= '" & resp_comp_aux & "' AND item_seg_edo_comp =  '" & edo_comprom_aux & "' AND item_seg_coment_item_seg = '" & coment_item_seg_aux & "' ) " &
+                                            "BEGIN "
 
 
+                        dbinsert_item_seg = dbinsert_item_seg _
+                                            & "INSERT INTO [dbo].[imp_item_seguimiento_hist] " _
+                                            & "(item_seg_cat,item_seg_cod_ini,item_seg_fecha_ing,item_seg_correl,item_seg_cod_int,item_seg_compromisos, " _
+                                            & "item_seg_resp_comp,item_seg_fecha_venc,item_seg_fecha_replanif,item_seg_cant_replanif,item_seg_fecha_cierre,item_seg_condicion,item_seg_edo_comp,item_seg_coment_item_seg,item_seg_fecha_ingreso,item_nombre_hoja) " _
+                                            & "SELECT item_seg_cat,item_seg_cod_ini,item_seg_fecha_ing,item_seg_correl,item_seg_cod_int,item_seg_compromisos," _
+                                            & "item_seg_resp_comp,item_seg_fecha_venc,item_seg_fecha_replanif,item_seg_cant_replanif,item_seg_fecha_cierre,item_seg_condicion,item_seg_edo_comp,item_seg_coment_item_seg,item_seg_fecha_ingreso,item_nombre_hoja " _
+                                            & "FROM [dbo].[imp_item_seguimiento] " _
+                                            & "WHERE item_seg_cod_ini='" & CodIniciativa & "' and item_seg_correl='" & correl_cod_proy_value & "' and item_seg_cod_int='" & cod_int_value & "'   " _
+                                            & "DELETE from [dbo].[imp_item_seguimiento] " _
+                                            & "WHERE item_seg_cod_ini='" & CodIniciativa & "' and item_seg_correl='" & correl_cod_proy_value & "' and item_seg_cod_int='" & cod_int_value & "' "
+
+                        'dbinsert_item_seg = dbinsert_item_seg _
+                        '                    & "DELETE from [dbo].[imp_item_seguimiento] " _
+                        '                    & "WHERE item_seg_cod_ini='" & CodIniciativa & "' and item_seg_correl='" & correl_cod_proy_value & "' and item_seg_cod_int='" & cod_int_value & "'  "
 
 
+                        dbinsert_item_seg = dbinsert_item_seg _
+                                            & "INSERT INTO [dbo].[" & tblNom & "] " _
+                                            & "(item_seg_cat,item_seg_cod_ini,item_seg_fecha_ing,item_seg_correl,item_seg_cod_int,item_seg_compromisos, " _
+                                            & "item_seg_resp_comp,item_seg_fecha_venc,item_seg_fecha_replanif,item_seg_cant_replanif,item_seg_fecha_cierre,item_seg_condicion,item_seg_edo_comp,item_seg_coment_item_seg,item_seg_fecha_ingreso,item_nombre_hoja) " _
+                                            & "values('" & cat2_aux & "', '" & CodIniciativa & "', '" & fecha_ing_aux & "','" & correl_cod_proy_aux & "','" & cod_int_aux & "','" & compromisos_aux & "',  " _
+                                            & " '" & resp_comp_aux & "','" & fecha_venc_aux & "','" & fecha & "','" & cantidad_replanif_aux & "','" & fecha_cierre_comp_aux & "','" & condicion_aux & "','" & edo_comprom_aux & "', " _
+                                            & " '" & coment_item_seg_aux & "','" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "','" & hoja & "') "
+
+                        dbinsert_item_seg = dbinsert_item_seg &
+                                            "END"
 
 
-                    dbinsert_item_seg = "IF NOT EXISTS(SELECT item_seg_ide " &
-                                        "FROM [dbo].[" & tblNom & "] " &
-                                        "WHERE item_seg_cod_ini='" & CodIniciativa & "' AND item_seg_correl='" & correl_cod_proy_aux & "' " _
-                                         & "AND item_seg_cod_int='" & cod_int_aux & "' " _
-                                         & "AND item_seg_compromisos='" & compromisos_aux & "' AND item_seg_fecha_replanif = '" & fecha_replanif_aux & "' and item_seg_cant_replanif = '" & cantidad_replanif_aux & "'  " _
-                                         & "AND item_seg_resp_comp= '" & resp_comp_aux & "' AND item_seg_edo_comp =  '" & edo_comprom_aux & "' AND item_seg_coment_item_seg = '" & coment_item_seg_aux & "' ) " &
-                                        "BEGIN "
-
-                     
-                    'dbinsert_item_seg = dbinsert_item_seg _
-                    '                    & "INSERT INTO [dbo].[imp_item_seguimiento_hist] " _
-                    '                    & "(item_seg_cat,item_seg_cod_ini,item_seg_fecha_ing,item_seg_correl,item_seg_cod_int,item_seg_compromisos, " _
-                    '                    & "item_seg_resp_comp,item_seg_fecha_venc,item_seg_fecha_replanif,item_seg_cant_replanif,item_seg_fecha_cierre,item_seg_condicion,item_seg_edo_comp,item_seg_coment_item_seg,item_seg_fecha_ingreso,item_nombre_hoja) " _
-                    '                    & "SELECT item_seg_cat,item_seg_cod_ini,item_seg_fecha_ing,item_seg_correl,item_seg_cod_int,item_seg_compromisos," _
-                    '                    & "item_seg_resp_comp,item_seg_fecha_venc,item_seg_fecha_replanif,item_seg_cant_replanif,item_seg_fecha_cierre,item_seg_condicion,item_seg_edo_comp,item_seg_coment_item_seg,item_seg_fecha_ingreso,item_nombre_hoja " _
-                    '                    & "FROM [dbo].[imp_item_seguimiento] " _
-                    '                    & "WHERE item_seg_cod_ini='" & CodIniciativa & "' and item_seg_correl='" & correl_cod_proy_value & "' and item_seg_cod_int='" & cod_int_value & "'  " _
-                    '                    & "DELETE from [dbo].[imp_item_seguimiento] " _
-                    '                    & "WHERE item_seg_cod_ini='" & CodIniciativa & "' and item_seg_correl='" & correl_cod_proy_value & "' and item_seg_cod_int='" & cod_int_value & "'  "
-
-                    dbinsert_item_seg = dbinsert_item_seg _
-                                        & "DELETE from [dbo].[imp_item_seguimiento] " _
-                                        & "WHERE item_seg_cod_ini='" & CodIniciativa & "' and item_seg_correl='" & correl_cod_proy_value & "' and item_seg_cod_int='" & cod_int_value & "'  "
-
-
-                    dbinsert_item_seg = dbinsert_item_seg _
-                                        & "INSERT INTO [dbo].[" & tblNom & "] " _
-                                        & "(item_seg_cat,item_seg_cod_ini,item_seg_fecha_ing,item_seg_correl,item_seg_cod_int,item_seg_compromisos, " _
-                                        & "item_seg_resp_comp,item_seg_fecha_venc,item_seg_fecha_replanif,item_seg_cant_replanif,item_seg_fecha_cierre,item_seg_condicion,item_seg_edo_comp,item_seg_coment_item_seg,item_seg_fecha_ingreso,item_nombre_hoja) " _
-                                        & "values('" & cat2_aux & "', '" & CodIniciativa & "', '" & fecha_ing_aux & "','" & correl_cod_proy_aux & "','" & cod_int_aux & "','" & compromisos_aux & "',  " _
-                                        & " '" & resp_comp_aux & "','" & fecha_venc_aux & "','" & fecha_replanif_aux & "','" & cantidad_replanif_aux & "','" & fecha_cierre_comp_aux & "','" & condicion_aux & "','" & edo_comprom_aux & "', " _
-                                        & " '" & coment_item_seg_aux & "','" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "','" & hoja & "') "
-
-                    dbinsert_item_seg = dbinsert_item_seg &
-                                        "END"
-
-                    'Debug.Print(dbinsert_item_seg)
-
-
-                    dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                    dbcommand = New Data.Odbc.OdbcCommand(dbinsert_item_seg, dbConexion)
-                    dbcommand.CommandType = CommandType.Text
-                    dbConexion.Open()
-                    dbcommand.ExecuteNonQuery()
-                    dbConexion.Close()
-                    dbConexion = Nothing
-                    dbcommand = Nothing
-                    dbdata = Nothing
-
-                    '*********************************************HISTORICO***********************************************'
-                    If fecha_replanif_aux <> "" Then
-
-                        Arreglo_Comentarios.Add(fecha_venc_aux & ":" & coment_item_seg_aux)
-                     
-
-                        dbquery = " SELECT item_seg_coment_item_seg FROM [dbo].[imp_item_seguimiento]  where item_seg_fecha_replanif = '" & fecha_replanif_aux & "'"
-                        'Debug.Print(dbquery)
+                        Debug.Print(dbinsert_item_seg)
 
                         dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                        dbcommand = New Data.Odbc.OdbcCommand(dbquery, dbConexion)
-                        dbcommand.CommandType = CommandType.Text
-                        dbConexion.Open()
-                        dbdata = dbcommand.ExecuteReader
-
-                        If dbdata.HasRows = True Then
-                            dbdata.Read()
-                            comentario = dbdata.Item(0).ToString
-                            dbdata.Close()
-                            dbConexion.Close()
-
-                            If (comentario <> "0") Then
-                                comentario_aux = coment_item_seg_aux
-                            Else
-
-                                comentario_aux = ""
-
-                            End If
-
-                        End If
-
-                        dbinsert_item_seg_historico = "IF NOT EXISTS(SELECT item_seg_ide " &
-                                       "FROM [dbo].[imp_item_seguimiento_hist] " &
-                                       "WHERE item_seg_cod_ini='" & CodIniciativa & "' AND item_seg_correl='" & correl_cod_proy_aux & "' " _
-                                        & "AND item_seg_cod_int='" & cod_int_aux & "' " _
-                                        & "AND item_seg_compromisos='" & compromisos_aux & "' AND item_seg_fecha_replanif = '" & fecha_replanif_aux & "' ) " &
-                                       "BEGIN "
-
-                        dbinsert_item_seg_historico = dbinsert_item_seg_historico _
-                                        & "INSERT INTO [dbo].[imp_item_seguimiento_hist] " _
-                                        & "(item_seg_cat,item_seg_cod_ini,item_seg_fecha_ing,item_seg_correl,item_seg_cod_int,item_seg_compromisos, " _
-                                        & "item_seg_resp_comp,item_seg_fecha_venc,item_seg_fecha_replanif,item_seg_cant_replanif,item_seg_fecha_cierre,item_seg_condicion,item_seg_edo_comp,item_seg_coment_item_seg,item_seg_fecha_ingreso,item_nombre_hoja) " _
-                                        & "values('" & cat2_aux & "', '" & CodIniciativa & "', '" & fecha_ing_aux & "','" & correl_cod_proy_aux & "','" & cod_int_aux & "','" & compromisos_aux & "',  " _
-                                        & " '" & resp_comp_aux & "','" & fecha_replanif_aux & "','" & fecha_replanif_aux & "','" & cantidad_replanif_aux & "','" & fecha_cierre_comp_aux & "','" & condicion_aux & "','" & edo_comprom_aux & "', " _
-                                        & " '" & comentario_aux & "','" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "','" & hoja & "') "
-
-
-                        dbinsert_item_seg_historico = dbinsert_item_seg_historico &
-                                       "END"
-
-                        dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
-                        dbcommand = New Data.Odbc.OdbcCommand(dbinsert_item_seg_historico, dbConexion)
+                        dbcommand = New Data.Odbc.OdbcCommand(dbinsert_item_seg, dbConexion)
                         dbcommand.CommandType = CommandType.Text
                         dbConexion.Open()
                         dbcommand.ExecuteNonQuery()
@@ -4528,13 +4436,112 @@ salirSinFilas:
                         dbConexion = Nothing
                         dbcommand = Nothing
                         dbdata = Nothing
-
                     End If
-
-
-                    MessageExito = "Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : " & CodIniciativa & " - Fila " & contfilas
-                    Log(MessageExito, "exito")
                 Next
+
+
+
+                '*********************************************HISTORICO***********************************************'
+                If fecha_replanif_aux <> "" Then
+
+                    fecha_historica = cadEnter_fecha_replanif.Length - 1
+
+                    For i As Integer = 0 To cadEnter_fecha_replanif.Length - 1
+
+
+                        cat2_aux = cat2_value
+                        fecha_ing_aux = fecha_ing_sist_value
+                        correl_cod_proy_aux = correl_cod_proy_value
+                        cod_int_aux = cod_int_value
+                        compromisos_aux = compromisos_value
+                        resp_comp_aux = resp_comp_value
+
+
+                        'If (i = 0) Then
+
+                        fecha_venc_aux = cadEnter_fecha_replanif(i)
+                        'Else
+                        'fecha_venc_aux = ""
+
+                        'End If
+
+
+                        If (i = 0) Then
+                            fecha_replanif_aux = ""
+                        Else
+                            fecha_replanif_aux = cadEnter_fecha_replanif(i - 1)
+                        End If
+
+
+                        cantidad_replanif_aux = cantidad_replanif
+
+                        fecha_cierre_comp_aux = fecha_cierre_value
+
+                        edo_comprom_aux = edo_comp_value
+
+                        coment_item_seg_aux = coment_item_seg_value
+
+
+                        'Pregunto si el ultimo valor de la fecha_replanificación existe en la tabla item-seguimiento de modo para validar de no insertarlo en 
+                        'la tabla historica.
+
+                        dbRowCount = "select COUNT(*) AS contador from [dbo].[imp_item_seguimiento] " _
+                                         & "WHERE item_seg_cod_ini='" & CodIniciativa & "' AND item_seg_correl='" & correl_cod_proy_aux & "' " _
+                                         & "AND item_seg_cod_int='" & cod_int_aux & "' " _
+                                         & "AND item_seg_fecha_replanif = '" & cadEnter_fecha_replanif(i) & "'   "
+                        dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                        dbcommand = New Data.Odbc.OdbcCommand(dbRowCount, dbConexion)
+                        dbcommand.CommandType = CommandType.Text
+                        dbConexion.Open()
+                        dbdata = dbcommand.ExecuteReader
+
+                        If dbdata.HasRows = True Then
+                            dbdata.Read()
+                            dbresultado = dbdata.Item(0).ToString
+
+                            'Si existe Data
+                            If (dbresultado = 0) Or (cadEnter_fecha_replanif.Length = 1) Then
+
+                                dbinsert_item_seg_historico = "IF NOT EXISTS(SELECT item_seg_ide " &
+                                              "FROM [dbo].[imp_item_seguimiento_hist] " &
+                                              "WHERE item_seg_cod_ini='" & CodIniciativa & "' AND item_seg_correl='" & correl_cod_proy_aux & "' " _
+                                               & "AND item_seg_cod_int='" & cod_int_aux & "' " _
+                                               & "AND item_seg_compromisos='" & compromisos_aux & "' AND item_seg_fecha_replanif = '" & fecha_replanif_aux & "' ) " &
+                                             "BEGIN "
+
+                                dbinsert_item_seg_historico = dbinsert_item_seg_historico _
+                                                & "INSERT INTO [dbo].[imp_item_seguimiento_hist] " _
+                                                & "(item_seg_cat,item_seg_cod_ini,item_seg_fecha_ing,item_seg_correl,item_seg_cod_int,item_seg_compromisos, " _
+                                                & "item_seg_resp_comp,item_seg_fecha_venc,item_seg_fecha_replanif,item_seg_cant_replanif,item_seg_fecha_cierre,item_seg_condicion,item_seg_edo_comp,item_seg_coment_item_seg,item_seg_fecha_ingreso,item_nombre_hoja) " _
+                                                & "values('" & cat2_aux & "', '" & CodIniciativa & "', '" & fecha_ing_aux & "','" & correl_cod_proy_aux & "','" & cod_int_aux & "','" & compromisos_aux & "',  " _
+                                                & " '" & resp_comp_aux & "','" & fecha_venc_aux & "','" & fecha_replanif_aux & "','" & cantidad_replanif_aux & "','" & fecha_cierre_comp_aux & "','" & condicion_aux & "','" & edo_comprom_aux & "', " _
+                                                & " '" & comentario_aux & "','" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "','" & hoja & "') "
+
+
+                                dbinsert_item_seg_historico = dbinsert_item_seg_historico &
+                                               "END"
+
+                                'Debug.Print(dbinsert_item_seg_historico)
+
+                                dbConexion = New Data.Odbc.OdbcConnection(GetConnectionString(0))
+                                dbcommand = New Data.Odbc.OdbcCommand(dbinsert_item_seg_historico, dbConexion)
+                                dbcommand.CommandType = CommandType.Text
+                                dbConexion.Open()
+                                dbcommand.ExecuteNonQuery()
+                                dbConexion.Close()
+                                dbConexion = Nothing
+                                dbcommand = Nothing
+                                dbdata = Nothing
+                            End If
+                        End If
+
+                    Next
+                End If
+
+
+                MessageExito = "Se Inserto con Exito en la tabla Item Seguimientos con el codigo Iniciativa : " & CodIniciativa & " - Fila " & contfilas
+                Log(MessageExito, "exito")
+
 
 
                 Console.WriteLine("Se Inserto con Exito en la tabla Item Seguimientos... ")
